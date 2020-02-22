@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TournamentService } from 'src/app/service/tournament.service';
-import { EventModel } from 'src/app/models/schedule/event.model';
+import { EventModel } from 'src/app/models/tournament/event.model';
 
 @Component({
   selector: 'app-valoran',
@@ -31,8 +31,8 @@ export class ValoranComponent implements OnInit {
 
     this.getTourney().then(
       (resp: any) => {
-        this.count = resp.length;
         this.tournamentService.events = resp;
+        this.count = resp.length;
         this.events = this.tournamentService.events;
         debugger
         this.getTeam(1)
@@ -64,31 +64,32 @@ export class ValoranComponent implements OnInit {
   }
 
   private createTourney() {
-    let idCount = this.count + 1;
-    let name: string = `teste torneio ${idCount}`;
+    let event = 16;
+    let id = this.count + 1;
+    let title: string = `teste torneio ${id}`;
+    let body: any = this.tournamentService.createTourney(id, title, event);
     debugger;
-    let body: any = this.tournamentService.teamModal(idCount, name);
-    debugger;
-    this.tournamentService.createTourney(body).subscribe(
-      (resp: any) => {
-        if (resp.status) {
-          this.showContent = false;
-          this.getTourney().then(
-            (resp: any) => {
-              // this.listProducts = resp.result;
-              // this.showContent = true;
-              // this.createForm(this.infoProduct);
-              console.log('Produto cadastrado com sucesso!', 'success');
+    this.tournamentService.postTourney(body).subscribe(
+      () => {
+        this.showContent = false;
+        this.getTourney().then(
+          (resp: any) => {
+            // this.listProducts = resp.result;
+            // this.showContent = true;
+            // this.createForm(this.infoProduct);
+            debugger
+            this.tournamentService.events = resp;
+            this.count = resp.length;
+            this.events = this.tournamentService.events;
+            console.log('Torneio cadastrado com sucesso!', 'success');
+          }
+        )
+          .catch(
+            (error) => {
+              console.log('Ocorreu um erro inesperado!', 'danger');
             }
-          )
-            .catch(
-              (error) => {
-                console.log('Ocorreu um erro inesperado!', 'danger');
-              }
-            );
-        } else {
-          console.log('Ocorreu um erro, tente novamente mais tarde!', 'warning');
-        }
+          );
+        
       },
       error => {
         console.log('Ocorreu um erro inesperado!', 'danger');

@@ -230,286 +230,233 @@
     },
     {
       "id": 2,
-      "title": "teste torneio 2"
-    },
-    {
-      "id": 3,
-      "title": "teste torneio 3"
-    },
-    {
-      "id": 4,
-      "title": "teste torneio 4",
-      "allowed": true,
-      "rounds": [
-        {}
-      ]
-    },
-    {
-      "id": 5,
-      "title": "teste torneio 5",
-      "allowed": true,
-      "rounds": [
-        {
-          "round": null,
-          "game": null,
-          "scoreA": null,
-          "scoreB": null,
-          "teamA": null,
-          "teamB": null,
-          "status": null,
-          "next": [
-            null
-          ],
-          "win": null
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "title": "teste torneio 6",
-      "allowed": true,
-      "rounds": [
-        {},
-        {},
-        {},
-        {}
-      ]
-    },
-    {
-      "id": 7,
-      "title": "teste torneio 7",
-      "allowed": true,
-      "rounds": [
-        {},
-        {},
-        {},
-        {}
-      ]
-    },
-    {
-      "id": 8,
-      "title": "teste torneio 8",
-      "allowed": true,
-      "rounds": [
-        {},
-        {},
-        {},
-        {}
-      ]
-    },
-    {
-      "id": 9,
-      "title": "teste torneio 9",
+      "title": "teste torneio 2",
+      "totalTeam": 1,
       "allowed": true,
       "rounds": [
         {
           "games": [
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
+              "round": 1,
+              "game": 1,
+              "scoreA": null,
+              "scoreB": null,
               "teamA": "",
               "teamB": "",
-              "status": "",
+              "status": "close",
               "next": [
+                9,
                 ""
               ],
-              "win": ""
+              "win": null
             },
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
+              "round": 1,
+              "game": 2,
+              "scoreA": null,
+              "scoreB": null,
               "teamA": "",
               "teamB": "",
-              "status": "",
+              "status": "close",
               "next": [
+                9,
                 ""
               ],
-              "win": ""
+              "win": null
             },
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
+              "round": 1,
+              "game": 3,
+              "scoreA": null,
+              "scoreB": null,
               "teamA": "",
               "teamB": "",
-              "status": "",
+              "status": "close",
               "next": [
+                10,
                 ""
               ],
-              "win": ""
+              "win": null
             },
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
+              "round": 1,
+              "game": 4,
+              "scoreA": null,
+              "scoreB": null,
               "teamA": "",
               "teamB": "",
-              "status": "",
+              "status": "close",
               "next": [
+                10,
                 ""
               ],
-              "win": ""
+              "win": null
             },
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
+              "round": 1,
+              "game": 5,
+              "scoreA": null,
+              "scoreB": null,
               "teamA": "",
               "teamB": "",
-              "status": "",
+              "status": "close",
               "next": [
+                11,
                 ""
               ],
-              "win": ""
+              "win": null
             },
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
+              "round": 1,
+              "game": 6,
+              "scoreA": null,
+              "scoreB": null,
               "teamA": "",
               "teamB": "",
-              "status": "",
+              "status": "close",
               "next": [
+                11,
                 ""
               ],
-              "win": ""
+              "win": null
             },
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
+              "round": 1,
+              "game": 7,
+              "scoreA": null,
+              "scoreB": null,
               "teamA": "",
               "teamB": "",
-              "status": "",
+              "status": "close",
               "next": [
+                12,
                 ""
               ],
-              "win": ""
+              "win": null
             },
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
+              "round": 1,
+              "game": 8,
+              "scoreA": null,
+              "scoreB": null,
               "teamA": "",
               "teamB": "",
-              "status": "",
+              "status": "close",
               "next": [
+                12,
                 ""
               ],
-              "win": ""
+              "win": null
             }
           ]
         },
         {
           "games": [
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
-              "teamA": "",
-              "teamB": "",
-              "status": "",
+              "round": 1,
+              "game": 1,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": "vencedor do jogo: 1",
+              "teamB": "vencedor do jogo: 2",
+              "status": "close",
               "next": [
+                13,
                 ""
               ],
-              "win": ""
+              "win": null
             },
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
-              "teamA": "",
-              "teamB": "",
-              "status": "",
+              "round": 1,
+              "game": 2,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": "vencedor do jogo: 3",
+              "teamB": "vencedor do jogo: 4",
+              "status": "close",
               "next": [
+                13,
                 ""
               ],
-              "win": ""
+              "win": null
             },
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
-              "teamA": "",
-              "teamB": "",
-              "status": "",
+              "round": 1,
+              "game": 3,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": "vencedor do jogo: 5",
+              "teamB": "vencedor do jogo: 6",
+              "status": "close",
               "next": [
+                14,
                 ""
               ],
-              "win": ""
+              "win": null
             },
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
-              "teamA": "",
-              "teamB": "",
-              "status": "",
+              "round": 1,
+              "game": 4,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": "vencedor do jogo: 7",
+              "teamB": "vencedor do jogo: 8",
+              "status": "close",
               "next": [
+                14,
                 ""
               ],
-              "win": ""
+              "win": null
             }
           ]
         },
         {
           "games": [
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
-              "teamA": "",
-              "teamB": "",
-              "status": "",
+              "round": 1,
+              "game": 1,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": "vencedor do jogo: 9",
+              "teamB": "vencedor do jogo: 10",
+              "status": "close",
               "next": [
+                15,
                 ""
               ],
-              "win": ""
+              "win": null
             },
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
-              "teamA": "",
-              "teamB": "",
-              "status": "",
+              "round": 1,
+              "game": 2,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": "vencedor do jogo: 11",
+              "teamB": "vencedor do jogo: 12",
+              "status": "close",
               "next": [
+                15,
                 ""
               ],
-              "win": ""
+              "win": null
             }
           ]
         },
         {
           "games": [
             {
-              "round": 0,
-              "game": 0,
-              "scoreA": 0,
-              "scoreB": 0,
-              "teamA": "",
-              "teamB": "",
-              "status": "",
+              "round": 1,
+              "game": 1,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": "vencedor do jogo: 13",
+              "teamB": "vencedor do jogo: 14",
+              "status": "close",
               "next": [
+                15,
                 ""
               ],
-              "win": ""
+              "win": null
             }
           ]
         }

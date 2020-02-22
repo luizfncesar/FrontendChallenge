@@ -5,6 +5,7 @@ export class EventModel {
   id: number = 0;
   title: string = '';
   allowed?: boolean = true;
+  totalTeam: number = 16;
   teams?: TeamModel[];
   rounds?: GamesModel[];
 }
