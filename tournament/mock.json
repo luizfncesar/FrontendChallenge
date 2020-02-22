@@ -2,46 +2,518 @@
   "team-list": [
     {
       "id": 0,
-      "name": "teste-1",
-      "projeto": "projeto"
-    },
-    {
-      "id": 1,
-      "name": "teste-2",
-      "projeto": "projeto"
-    }
-  ],
-  "tournament": [
-    {
-      "id": 0,
-      "rod-1": {
-        "1": {
-          "nome-1": [
-            "teste-1",
-            1
-          ],
-          "nome-2": [
-            "teste-2",
-            1
+      "title": "2019 Pretorian",
+      "allowed": true,
+      "teams": [
+        {
+          "idTeam": 1,
+          "name": "pretorian"
+        },
+        {
+          "idTeam": 2,
+          "name": "Pain"
+        }
+      ],
+      "rounds": [
+        {
+          "games": [
+            {
+              "round": 1,
+              "game": 1,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "team1",
+              "teamB": "team2",
+              "status": "open",
+              "next": [
+                9,
+                "teamA"
+              ]
+            },
+            {
+              "round": 1,
+              "game": 2,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "team1",
+              "teamB": "team2",
+              "status": "open",
+              "next": [
+                9,
+                "teamB"
+              ]
+            },
+            {
+              "round": 1,
+              "game": 3,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "team1",
+              "teamB": "team2",
+              "status": "open",
+              "next": [
+                10,
+                "teamA"
+              ]
+            },
+            {
+              "round": 1,
+              "game": 4,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "team1",
+              "teamB": "team2",
+              "status": "open",
+              "next": [
+                10,
+                "teamB"
+              ]
+            },
+            {
+              "round": 1,
+              "game": 5,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "team1",
+              "teamB": "team2",
+              "status": "open",
+              "next": [
+                11,
+                "teamA"
+              ]
+            },
+            {
+              "round": 1,
+              "game": 6,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "team1",
+              "teamB": "team2",
+              "status": "open",
+              "next": [
+                11,
+                "teamB"
+              ]
+            },
+            {
+              "round": 1,
+              "game": 7,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "team1",
+              "teamB": "team2",
+              "status": "open",
+              "next": [
+                12,
+                "teamA"
+              ]
+            },
+            {
+              "round": 1,
+              "game": 8,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "team1",
+              "teamB": "team2",
+              "status": "open",
+              "next": [
+                12,
+                "teamB"
+              ]
+            }
           ]
         },
-        "2": {
-          "nome-1": [
-            "teste-1",
-            1
-          ],
-          "nome-2": [
-            "teste-2",
-            1
+        {
+          "games": [
+            {
+              "round": 2,
+              "game": 9,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "vencedor do jogo 1",
+              "teamB": "vencedor do jogo 2",
+              "status": "open",
+              "next": [
+                13,
+                "teamA"
+              ]
+            },
+            {
+              "round": 2,
+              "game": 10,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "vencedor do jogo 3",
+              "teamB": "vencedor do jogo 4",
+              "status": "open",
+              "next": [
+                13,
+                "teamB"
+              ]
+            },
+            {
+              "round": 2,
+              "game": 11,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "vencedor do jogo 5",
+              "teamB": "vencedor do jogo 6",
+              "status": "open",
+              "next": [
+                14,
+                "teamA"
+              ]
+            },
+            {
+              "round": 2,
+              "game": 12,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "vencedor do jogo 7",
+              "teamB": "vencedor do jogo 8",
+              "status": "open",
+              "next": [
+                14,
+                "teamB"
+              ]
+            }
+          ]
+        },
+        {
+          "games": [
+            {
+              "round": 3,
+              "game": 13,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "vencedor do jogo 9",
+              "teamB": "vencedor do jogo 10",
+              "status": "open",
+              "next": [
+                15,
+                "teamA"
+              ]
+            },
+            {
+              "round": 3,
+              "game": 14,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "vencedor do jogo 11",
+              "teamB": "vencedor do jogo 12",
+              "status": "open",
+              "next": [
+                15,
+                "teamB"
+              ]
+            }
+          ]
+        },
+        {
+          "games": [
+            {
+              "round": 3,
+              "game": 13,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "vencedor do jogo 13",
+              "teamB": "vencedor do jogo 14",
+              "status": "open",
+              "next": [
+                16,
+                "win"
+              ]
+            }
           ]
         }
-      },
-      "rod-2": {}
+      ]
     },
     {
-      "id": 1,
-      "name": "teste-2",
-      "projeto": "projeto"
+      "id": 2,
+      "title": "teste torneio 2"
+    },
+    {
+      "id": 3,
+      "title": "teste torneio 3"
+    },
+    {
+      "id": 4,
+      "title": "teste torneio 4",
+      "allowed": true,
+      "rounds": [
+        {}
+      ]
+    },
+    {
+      "id": 5,
+      "title": "teste torneio 5",
+      "allowed": true,
+      "rounds": [
+        {
+          "round": null,
+          "game": null,
+          "scoreA": null,
+          "scoreB": null,
+          "teamA": null,
+          "teamB": null,
+          "status": null,
+          "next": [
+            null
+          ],
+          "win": null
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "teste torneio 6",
+      "allowed": true,
+      "rounds": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "id": 7,
+      "title": "teste torneio 7",
+      "allowed": true,
+      "rounds": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "id": 8,
+      "title": "teste torneio 8",
+      "allowed": true,
+      "rounds": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "id": 9,
+      "title": "teste torneio 9",
+      "allowed": true,
+      "rounds": [
+        {
+          "games": [
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            },
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            },
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            },
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            },
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            },
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            },
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            },
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            }
+          ]
+        },
+        {
+          "games": [
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            },
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            },
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            },
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            }
+          ]
+        },
+        {
+          "games": [
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            },
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            }
+          ]
+        },
+        {
+          "games": [
+            {
+              "round": 0,
+              "game": 0,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "",
+              "teamB": "",
+              "status": "",
+              "next": [
+                ""
+              ],
+              "win": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,1 +1,36 @@
 <p>valoran works!</p>
+<!-- 
+<table>
+    <ul *ngFor="let event of events; let n=index">
+        <li>torneio: {{n+1}}</li>
+        <li>Título: {{event.title}}</li>
+        <li>Título: {{event.games}}</li>
+        <table>
+            <ul *ngFor="let e of event.games; let l=index;">
+                <li>round: {{l+1}}</li>
+                <table>
+                    <ul *ngFor="let k of e.round; let j=index;">
+                        <li>game: {{j+1}}</li>                    
+                    </ul>
+                </table>
+            </ul>
+        </table>
+    </ul>
+</table> -->
+<main main id="tournament">
+    <div *ngFor="let event of events; let n=index">
+        <h1>{{event.title}}</h1>
+        <div class="main">
+            <ul class="round round-{{l+1}}" *ngFor="let e of event.rounds; let l=index;">
+                <ng-container *ngFor="let k of e.games; let j=index;">
+                    <li class="spacer">&nbsp;</li>
+                    <li class="game game-top winner">{{k.teamA}} <span>{{k.scoreA}}</span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li class="game game-bottom ">{{k.teamB}} <span>{{k.scoreB}}</span></li>
+                </ng-container>
+                <li class="spacer">&nbsp;</li>
+            </ul>
+        </div>		
+    </div>
+</main>
+
