@@ -1,36 +1,45 @@
-<p>valoran works!</p>
-<!-- 
-<table>
-    <ul *ngFor="let event of events; let n=index">
-        <li>torneio: {{n+1}}</li>
-        <li>Título: {{event.title}}</li>
-        <li>Título: {{event.games}}</li>
-        <table>
-            <ul *ngFor="let e of event.games; let l=index;">
-                <li>round: {{l+1}}</li>
-                <table>
-                    <ul *ngFor="let k of e.round; let j=index;">
-                        <li>game: {{j+1}}</li>                    
-                    </ul>
-                </table>
-            </ul>
-        </table>
-    </ul>
-</table> -->
-<main main id="tournament">
-    <div *ngFor="let event of events; let n=index">
-        <h1>{{event.title}}</h1>
-        <div class="main">
-            <ul class="round round-{{l+1}}" *ngFor="let e of event.rounds; let l=index;">
-                <ng-container *ngFor="let k of e.games; let j=index;">
-                    <li class="spacer">&nbsp;</li>
-                    <li class="game game-top winner">{{k.teamA}} <span>{{k.scoreA}}</span></li>
-                    <li class="game game-spacer">&nbsp;</li>
-                    <li class="game game-bottom ">{{k.teamB}} <span>{{k.scoreB}}</span></li>
-                </ng-container>
-                <li class="spacer">&nbsp;</li>
-            </ul>
-        </div>		
+<div class="content-padder content-background">
+    <app-breadcrumb [titleBreadcrumb]="title" [iconBreadcrumb]="'ion-cube'"></app-breadcrumb>
+    <div class="uk-section-small" *ngIf="showContent">
+        <div class="uk-container uk-container-large">
+            <app-table [listTable]="events" (changeStatus)="changeStatus($event)" (deleteProduct)="deleteProduct($event)" (openModal)="openModal($event)"></app-table>
+        </div>
     </div>
-</main>
+    <div class="uk-height-medium">
+        <div class="uk-text-center uk-align-center uk-margin-large-top" uk-spinner="ratio: 2" *ngIf="!showContent"></div>
+    </div>
+</div>
+
+<!-- This is the modal -->
+<div id="modal-example" uk-modal *ngIf="showContent">
+    <div class="uk-modal-dialog uk-modal-body">
+        <form autocomplete="off" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <fieldset class="uk-fieldset">
+
+                <legend class="uk-legend">{{type === 'register'? 'Cadastrar' : 'Editar'}} Produto</legend>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Nome do Produto</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="medeletro..." formControlName="name">
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label uk-margin-bottom" for="form-stacked-select">Status do Produto</label>
+                    <div class="uk-form-controls">
+                        <select class="uk-select" id="form-stacked-select" formControlName="status">
+              <option [value]="true">Ativo</option>
+              <option [value]="false">Inativo</option>
+            </select>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close uk-margin-right" type="button">Cancelar</button>
+            <button class="uk-button uk-button-primary" type="button" (click)="onSubmit()" [disabled]="form.invalid">Salvar</button>
+        </p>
+    </div>
+</div>
 

@@ -39,7 +39,11 @@ export class TournamentService {
     return this.http.post(`${environment.API}/team-list`, body);
   }
 
-  createTourney(id: number, title: string, totalTeam: number ) {
+  createTourney(info: any) {
+    debugger
+    let id = info.id;
+    let title = info.name;
+    let totalTeam = info.grid;
     let nextGame = totalTeam/2;
     let countGames = 1;
 

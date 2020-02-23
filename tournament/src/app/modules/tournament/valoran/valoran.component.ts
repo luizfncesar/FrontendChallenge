@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { TournamentService } from 'src/app/service/tournament.service';
 import { EventModel } from 'src/app/models/tournament/event.model';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+declare var UIkit: any;
+declare var $: any;
+
+
 
 @Component({
   selector: 'app-valoran',
@@ -9,23 +14,24 @@ import { EventModel } from 'src/app/models/tournament/event.model';
 })
 export class ValoranComponent implements OnInit {
 
+  form: FormGroup;
+
   title: string = 'Produtos';
-  listProducts: any[] = [];
+  events: Array<EventModel[]>;
   showContent: boolean = false;
   count: number = 0;
-  events: Array<EventModel[]>;
-
-  infoProduct: Object = {
-    name: '',
-    status: true
-  };
-
   type: string;
 
-  private idProduct: string;
+  infoTournament: Object = {
+    id: null,
+    name: '',
+    status: true,
+    grid: null
+  };
 
   constructor(
-    private tournamentService: TournamentService
+    private tournamentService: TournamentService,
+    private formBuilder: FormBuilder
   ) {
     // this.postProducts();
 
@@ -34,9 +40,10 @@ export class ValoranComponent implements OnInit {
         this.tournamentService.events = resp;
         this.count = resp.length;
         this.events = this.tournamentService.events;
+        // this.getTeam(1);
         debugger
-        this.getTeam(1)
-        this.createTourney();
+        this.showContent = true;
+        this.createForm(this.infoTournament);
       }
     )
       .catch(
@@ -63,25 +70,22 @@ export class ValoranComponent implements OnInit {
     });
   }
 
-  private createTourney() {
-    let event = 16;
-    let id = this.count + 1;
-    let title: string = `teste torneio ${id}`;
-    let body: any = this.tournamentService.createTourney(id, title, event);
+  private registerTournament(info) {
+    info.id = this.count + 1
+    let body: any = this.tournamentService.createTourney(info);
     debugger;
     this.tournamentService.postTourney(body).subscribe(
       () => {
         this.showContent = false;
         this.getTourney().then(
           (resp: any) => {
-            // this.listProducts = resp.result;
-            // this.showContent = true;
-            // this.createForm(this.infoProduct);
-            debugger
             this.tournamentService.events = resp;
             this.count = resp.length;
             this.events = this.tournamentService.events;
+            this.showContent = true;
+            this.createForm(this.infoTournament);
             console.log('Torneio cadastrado com sucesso!', 'success');
+            debugger
           }
         )
           .catch(
@@ -97,6 +101,40 @@ export class ValoranComponent implements OnInit {
     );
   }
 
+  onSubmit() {
+    const body = this.form.value;
+    debugger;
+    if (this.type === 'register') {
+      this.registerTournament(body);
+    } else {
+      // this.productService.updateProduct(this.idProduct, body).subscribe(
+      //   (resp: any) => {
+      //     if (resp.status) {
+      //       this.showContent = false;
+      //       this.getProducts().then(
+      //         (resp: any) => {
+      //           this.listProducts = resp.result;
+      //           this.showContent = true;
+      //           this.createForm(this.infoProduct);
+      //           this.notify('Produto editado com sucesso!', 'success');
+      //         }
+      //       )
+      //         .catch(
+      //           (error) => {
+      //             this.notify('Ocorreu um erro inesperado!', 'danger');
+      //           }
+      //         );
+      //     } else {
+      //       this.notify('Ocorreu um erro, tente novamente mais tarde!', 'warning');
+      //     }
+      //   },
+      //   error => {
+      //     this.notify('Ocorreu um erro inesperado!', 'danger');
+      //   }
+      // );
+    }
+  }
+
   private getTeam(idTourney) {
     console.log(this.events)
     const num: number = this.events.length; 
@@ -105,114 +143,24 @@ export class ValoranComponent implements OnInit {
     })
   }
 
-  private createTeams() {
-    const body = {
-      "id": this.count,
-      "Dia": 2222,
-      "IdProduto": 5,
-      "IdTurma": 16047,
-      "Mes": 1,
-      "NomeTurma": "2019 MED MEDICINE MEDREADER",
-      "tema": [
-        {
-          "Hora": "08:30:00",
-          "IdProduto": 5,
-          "NomeTema": "1º Tema - Clínica Médica",
-          "Tempo": "MED MEDICINE MEDREADER &raquo; 08:30h",
-          "Titulo": "MED Síndrome Ictérica I ( Hepatites)"
-        },
-        {
-          "Hora": "11:30:00",
-          "IdProduto": 5,
-          "NomeTema": "2º Tema - Pediatria",
-          "Tempo": "MED MEDICINE MEDREADER &raquo; 08:30h",
-          "Titulo": "MED Doenças Exantemáticas"
-        }
-      ]
-    };
 
-    this.tournamentService.createTeams(body).subscribe(
-      (resp: any) => {
-        if (resp.status) {
-          this.showContent = false;
-          this.getTourney().then(
-            (resp: any) => {
-              this.listProducts = resp.result;
-              this.showContent = true;
-              this.count = this.count + 1;
-              // this.createForm(this.infoProduct);
-              console.log('Produto cadastrado com sucesso!', 'success');
-            }
-          )
-            .catch(
-              (error) => {
-                console.log('Ocorreu um erro inesperado!', 'danger');
-              }
-            );
-        } else {
-          console.log('Ocorreu um erro, tente novamente mais tarde!', 'warning');
-        }
-      },
-      error => {
-        console.log('Ocorreu um erro inesperado!', 'danger');
-      }
-    );
+  createForm(info: any) {
+    this.form = this.formBuilder.group({
+      name: [info.name, Validators.required],
+      status: [info.status, Validators.required],
+      grid: [16, Validators.required]
+    });
   }
 
-
-  // formatDataTheme() {
-  //   debugger
-  //   let id: number = 1;
-  //   let name: string = "luiz";
-  //   let format: any = this.tournamentService.teamModal(id, name);
-  //   console.log(format);
-    
-  //   // for (let index = 0; index < 4; index++) {
-  //   //   format.rounds.push({
-  //   //     index,
-  //   //     obj: item
-  //   //   });   
-  //   // }
-
-  //   // let aux = 0;
-  //   // let name = '';
-  //   // let currentName = '';
-  //   // const temp: Array<any> = [];
-  //   // let statusLoop = true;
-  //   // const finished: ThemeModel[] = [];
-  //   // const total = theme.length;
-  //   // while (aux < total) {
-  //   //   for (let index = 0; index < total; index++) {
-  //   //     const item = theme[index];
-  //   //     name = item.Local;
-  //   //     const status: boolean = temp.some(x => x.index === index);
-  //   //     if (!status) {
-  //   //       if (statusLoop) {
-  //   //         statusLoop = false;
-  //   //         currentName = name;
-  //   //         temp.push({
-  //   //           index,
-  //   //           obj: item
-  //   //         });
-  //   //       } else {
-  //   //         if (name == currentName) {
-  //   //           temp.push({
-  //   //             index,
-  //   //             obj: item
-  //   //           });
-  //   //         }
-  //   //       }
-  //   //     }
-  //   //   }
-  //   //   statusLoop = true;
-  //   //   currentName = '';
-  //   //   aux++;
-  //   // }
-
-  // //   temp.forEach(x => {
-  // //     finished.push(x.obj);
-  // //   });
-
-  // //   return finished;
-  // }
+  openModal(param: any) {
+    this.type = param.type;
+    if (this.type === 'register') {
+      this.createForm(this.infoTournament);
+    } else {
+      this.infoTournament = param.item._id;
+      this.createForm(param.item);
+    }
+    let uikitModal = UIkit.modal('#modal-example');
+    uikitModal.show()
+  }
 }
