@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from '../components/header/header.component';
+import { TableComponent } from '../components/table/table.component';
+import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [TableComponent, BreadcrumbComponent],
   imports: [
     CommonModule
   ],
   exports: [
-    HeaderComponent
+    TableComponent,
+    BreadcrumbComponent
   ]
 })
 export class SharedModule { }
