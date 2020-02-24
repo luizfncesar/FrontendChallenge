@@ -15,21 +15,27 @@ export class TableTournamentListComponent implements OnInit {
   @Output() changeStatus: EventEmitter<any> = new EventEmitter();
   @Output() deleteTourney: EventEmitter<string> = new EventEmitter();
   @Output() openModal: EventEmitter<any> = new EventEmitter();
+  @Output() openPageTourney: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  clickStatus(tournament: any) {
+  clickStatus(id: string) {
     this.closeDropdown();
-    this.changeStatus.emit(tournament);
+    this.changeStatus.emit(id);
+    debugger
   }
 
   deleteItem(id: string) {
     debugger
     this.closeDropdown();
     this.deleteTourney.emit(id);
+  }
+
+  openPage(id: string) {
+    this.openPageTourney.emit(id);
   }
 
   openRegister() {
