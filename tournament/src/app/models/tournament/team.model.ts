@@ -1,4 +1,4 @@
 export class TeamModel {
-  idTeam: boolean;
+  idTeam: number;
   name: string;
 }
