@@ -4,10 +4,12 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TournamentRoutingModule } from './tournament-routing.module';
 import { ValoranComponent } from './valoran/valoran.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { TeamListComponent } from './team-list/team-list.component';
+import { TournamentListComponent } from './tournament-list/tournament-list.component';
 
 
 @NgModule({
-  declarations: [ValoranComponent],
+  declarations: [ValoranComponent, TeamListComponent, TournamentListComponent],
   imports: [
     CommonModule,
     TournamentRoutingModule,
