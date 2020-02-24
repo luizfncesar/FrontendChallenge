@@ -14,18 +14,19 @@ declare var UIkit: any;
 export class ValoranComponent implements OnInit {
 
   form: FormGroup;
-
-  title: string = 'Produtos';
+  title: string = 'Valoran Tournament';
   events: Array<EventModel[]>;
   showContent: boolean = false;
   count: number = 0;
   type: string;
+  showButtonForm: Boolean = false;
 
   infoTournament: Object = {
     id: null,
-    name: '',
-    status: true,
-    grid: null
+    title: '',
+    allowed: true,
+    grid: 16,
+    // teams: null
   };
 
   constructor(
@@ -36,20 +37,19 @@ export class ValoranComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    
     this.getTourney().then(
       (resp: any) => {
         this.tournamentService.events = resp;
         this.count = resp.length;
         this.events = this.tournamentService.events;
-        // this.getTeam(1);
         this.showContent = true;
         this.createForm(this.infoTournament);
       }
     )
       .catch(
         (error: any) => {
-          // this.notify('Ocorreu um erro inesperado!', 'danger');
+          this.notify('Ocorreu um erro inesperado!', 'danger');
           console.log(error)
         }
       )
@@ -71,7 +71,6 @@ export class ValoranComponent implements OnInit {
   private registerTournament(info) {
     info.id = this.count + 1
     let body: any = this.tournamentService.createTourney(info);
-    debugger;
     this.tournamentService.postTourney(body).subscribe(
       () => {
         this.showContent = false;
@@ -83,7 +82,6 @@ export class ValoranComponent implements OnInit {
             this.showContent = true;
             this.createForm(this.infoTournament);
             console.log('Torneio cadastrado com sucesso!', 'success');
-            debugger
           }
         )
           .catch(
@@ -100,65 +98,67 @@ export class ValoranComponent implements OnInit {
   }
 
   onSubmit() {
+    debugger
     const body = this.form.value;
-    debugger;
     if (this.type === 'register') {
       this.registerTournament(body);
     } else {
-      // this.productService.updateProduct(this.idProduct, body).subscribe(
-      //   (resp: any) => {
-      //     if (resp.status) {
-      //       this.showContent = false;
-      //       this.getProducts().then(
-      //         (resp: any) => {
-      //           this.listProducts = resp.result;
-      //           this.showContent = true;
-      //           this.createForm(this.infoProduct);
-      //           this.notify('Produto editado com sucesso!', 'success');
-      //         }
-      //       )
-      //         .catch(
-      //           (error) => {
-      //             this.notify('Ocorreu um erro inesperado!', 'danger');
-      //           }
-      //         );
-      //     } else {
-      //       this.notify('Ocorreu um erro, tente novamente mais tarde!', 'warning');
-      //     }
-      //   },
-      //   error => {
-      //     this.notify('Ocorreu um erro inesperado!', 'danger');
-      //   }
-      // );
+      this.tournamentService.updateTorney('1', body).subscribe(
+        (resp: any) => {
+          this.showContent = false;
+          this.getTourney().then(
+            (resp: any) => {
+              this.tournamentService.events = resp;
+              this.count = resp.length;
+              this.events = this.tournamentService.events;
+              this.showContent = true;
+              this.createForm(this.infoTournament);
+              this.notify('Produto excluido com sucesso!', 'success');
+            }
+          )
+            .catch(
+              (error) => {
+                this.notify('Ocorreu um erro inesperado!', 'danger');
+              }
+            );
+        },
+        error => {
+          this.notify('Ocorreu um erro inesperado!', 'danger');
+        }
+      );
     }
-  }
-
-  private getTeam(idTourney) {
-    console.log(this.events)
-    const num: number = this.events.length; 
-    this.events.forEach((element) => {
-      // console.log("event", element);
-    })
   }
 
 
   createForm(info: any) {
     this.form = this.formBuilder.group({
-      name: [info.name, Validators.required],
-      status: [info.status, Validators.required],
-      grid: [16, Validators.required]
+      title: [info.title, Validators.required],
+      allowed: [info.allowed, Validators.required],
+      grid: [16, Validators.required],
+      // teams: this.formBuilder.array([this.createFormGroup(info)], Validators.required)
     });
   }
 
   openModal(param: any) {
+    debugger
     this.type = param.type;
     if (this.type === 'register') {
       this.createForm(this.infoTournament);
+      this.showButtonForm = false;
     } else {
-      this.infoTournament = param.item._id;
+      this.infoTournament = param.item.id;
       this.createForm(param.item);
     }
-    let uikitModal = UIkit.modal('#modal-example');
+    let uikitModal = UIkit.modal('#register-tournament');
     uikitModal.show()
+  }
+
+  private notify(msg: string, status: string) {
+    UIkit.notification({
+      message: msg,
+      status: status,
+      pos: 'top-center',
+      timeout: 2000
+    });
   }
 }
