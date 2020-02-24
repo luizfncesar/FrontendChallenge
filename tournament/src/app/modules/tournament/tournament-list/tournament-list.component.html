@@ -1,0 +1,54 @@
+<div class="content-padder content-background">
+    <app-breadcrumb [titleBreadcrumb]="title" [iconBreadcrumb]="'ion-cube'"></app-breadcrumb>
+    <div class="uk-section-small" *ngIf="showContent">
+        <app-table-tournament-list [nameList]="Torneio" [listTournament]="events" (changeStatus)="changeStatus($event)" (deleteProduct)="deleteProduct($event)" (openModal)="openModal($event)"></app-table-tournament-list>
+    </div>
+    <div class="uk-height-medium">
+        <div class="uk-text-center uk-align-center uk-margin-large-top" uk-spinner="ratio: 2" *ngIf="!showContent"></div>
+    </div>
+</div>
+
+<div id="register-tournament" uk-modal *ngIf="showContent">
+    <div class="uk-modal-dialog uk-modal-body">
+        <form autocomplete="off" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <fieldset class="uk-fieldset">
+
+                <legend class="uk-legend">{{type === 'register'? 'Cadastrar' : 'Editar'}} Produto</legend>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Nome do Torneio</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="medeletro..." formControlName="title">
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label uk-margin-bottom" for="form-stacked-select">Status do Torneio</label>
+                    <div class="uk-form-controls">
+                        <select class="uk-select" id="form-stacked-select" formControlName="allowed">
+                            <option [value]="true">Ativo</option>
+                            <option [value]="false">Inativo</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="uk-margin" *ngFor="let item of teams?.controls; let i = index;">
+                    <div [formGroup]="item">
+                        <label class="uk-form-label" for="form-stacked-text">Time: {{i+1}}/16</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-stacked-text" type="text" placeholder="medeletro..." formControlName="team">
+                        </div>
+                    </div>
+                </div>
+
+                <p class="uk-text-right">
+                    <button (click)="addTeam()" type="button"  class="uk-button uk-button-default uk-margin-right" type="button">Adicionar Equipe</button>
+                </p>
+            </fieldset>
+        </form>
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close uk-margin-right" type="button">Cancelar</button>
+            <button class="uk-button uk-button-primary" type="button" (click)="onSubmit()" [disabled]="form.invalid || !showButtonForm">Salvar</button>
+        </p>
+    </div>
+</div>

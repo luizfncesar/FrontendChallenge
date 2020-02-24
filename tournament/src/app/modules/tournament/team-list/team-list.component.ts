@@ -4,20 +4,18 @@ import { EventModel } from 'src/app/models/tournament/event.model';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 declare var UIkit: any;
 
-
-
 @Component({
-  selector: 'app-valoran',
-  templateUrl: './valoran.component.html',
-  styleUrls: ['./valoran.component.scss']
+  selector: 'app-team-list',
+  templateUrl: './team-list.component.html',
+  styleUrls: ['./team-list.component.scss']
 })
-export class ValoranComponent implements OnInit {
+export class TeamListComponent implements OnInit {
 
   form: FormGroup;
 
   title: string = 'Produtos';
   events: Array<EventModel[]>;
-  showContent: boolean = false;
+  showContent: boolean = true;
   count: number = 0;
   type: string;
 
@@ -28,11 +26,12 @@ export class ValoranComponent implements OnInit {
     grid: null
   };
 
+
   constructor(
     private tournamentService: TournamentService,
     private formBuilder: FormBuilder
   ) {
-
+  
   }
 
   ngOnInit() {
@@ -43,6 +42,7 @@ export class ValoranComponent implements OnInit {
         this.count = resp.length;
         this.events = this.tournamentService.events;
         // this.getTeam(1);
+        debugger
         this.showContent = true;
         this.createForm(this.infoTournament);
       }
@@ -54,6 +54,7 @@ export class ValoranComponent implements OnInit {
         }
       )
   }
+
 
   private getTourney() {
     return new Promise((resolve, reject) => {
