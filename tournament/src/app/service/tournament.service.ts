@@ -29,6 +29,11 @@ export class TournamentService {
   updateTorney(id: string, body: Object) {
     return this.http.put(`${environment.API}/team-list/${id}`, body);
   }
+
+  deleteTourney(id: string) {
+    debugger
+    return this.http.delete(`${environment.API}/team-list/${id}`);
+  }
   
   getTourney() {
     return this.http.get(`${environment.API}/team-list`);

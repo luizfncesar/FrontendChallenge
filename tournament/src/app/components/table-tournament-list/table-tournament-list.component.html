@@ -30,8 +30,7 @@
                     </a>
                   </td>
                   <td>{{info.title}}</td>
-                  <!-- <td>{{info.teams.length}}</td> -->
-                  <td>2</td>
+                  <td>{{info.teams.length}}</td>
                   <td>
                     <a class="uk-icon-button">
                       <span class="uk-icon-button" uk-icon="cog"></span>
@@ -55,7 +54,7 @@
                         </li>
                         <li class="uk-nav-divider"></li>
                         <li class="uk-text-center">
-                          <button type="button" (click)="deleteItem(info._id)"
+                          <button type="button" (click)="deleteItem(info.id)"
                             class="uk-button uk-label uk-label-danger uk-text-center">Excluir</button>
                         </li>
                       </ul>

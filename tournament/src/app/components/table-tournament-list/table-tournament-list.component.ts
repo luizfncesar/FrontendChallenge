@@ -13,7 +13,7 @@ export class TableTournamentListComponent implements OnInit {
   @Input() listTournament: any[] = [];
 
   @Output() changeStatus: EventEmitter<any> = new EventEmitter();
-  @Output() deleteProduct: EventEmitter<string> = new EventEmitter();
+  @Output() deleteTourney: EventEmitter<string> = new EventEmitter();
   @Output() openModal: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
@@ -21,14 +21,15 @@ export class TableTournamentListComponent implements OnInit {
   ngOnInit() {
   }
 
-  clickStatus(product: any) {
+  clickStatus(tournament: any) {
     this.closeDropdown();
-    this.changeStatus.emit(product);
+    this.changeStatus.emit(tournament);
   }
 
   deleteItem(id: string) {
+    debugger
     this.closeDropdown();
-    this.deleteProduct.emit(id);
+    this.deleteTourney.emit(id);
   }
 
   openRegister() {
@@ -38,10 +39,10 @@ export class TableTournamentListComponent implements OnInit {
     this.openModal.emit(param);
   }
 
-  openEdit(product: any) {
+  openEdit(tournament: any) {
     this.closeDropdown();
     const param = {
-      item: product,
+      item: tournament,
       type: 'edit'
     }
     this.openModal.emit(param);

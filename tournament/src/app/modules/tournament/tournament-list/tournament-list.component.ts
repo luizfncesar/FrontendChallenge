@@ -12,7 +12,7 @@ declare var UIkit: any;
 export class TournamentListComponent implements OnInit {
 
   form: FormGroup;
-  title: string = 'Produtos';
+  title: string = 'Tournament List';
   events: Array<EventModel[]>;
   showContent: boolean = false;
   count: number = 0;
@@ -53,7 +53,7 @@ export class TournamentListComponent implements OnInit {
     )
       .catch(
         (error: any) => {
-          // this.notify('Ocorreu um erro inesperado!', 'danger');
+          this.notify('Ocorreu um erro inesperado!', 'danger');
           console.log(error)
         }
       )
@@ -109,27 +109,25 @@ export class TournamentListComponent implements OnInit {
     } else {
       this.tournamentService.updateTorney('1', body).subscribe(
         (resp: any) => {
-          if (resp.status) {
-            this.showContent = false;
-            this.getTourney().then(
-              (resp: any) => {
-                // this.listProducts = resp.result;
-                // this.showContent = true;
-                // this.createForm(this.infoProduct);
-                // this.notify('Produto editado com sucesso!', 'success');
+          this.showContent = false;
+          this.getTourney().then(
+            (resp: any) => {
+              this.tournamentService.events = resp;
+              this.count = resp.length;
+              this.events = this.tournamentService.events;
+              this.showContent = true;
+              this.createForm(this.infoTournament);
+              this.notify('Produto excluido com sucesso!', 'success');
+            }
+          )
+            .catch(
+              (error) => {
+                this.notify('Ocorreu um erro inesperado!', 'danger');
               }
-            )
-              .catch(
-                (error) => {
-                  // this.notify('Ocorreu um erro inesperado!', 'danger');
-                }
-              );
-          } else {
-            // this.notify('Ocorreu um erro, tente novamente mais tarde!', 'warning');
-          }
+            );
         },
         error => {
-          // this.notify('Ocorreu um erro inesperado!', 'danger');
+          this.notify('Ocorreu um erro inesperado!', 'danger');
         }
       );
     }
@@ -164,6 +162,33 @@ export class TournamentListComponent implements OnInit {
     }
   }
 
+  deleteTourney(id: string) {
+    debugger
+    this.tournamentService.deleteTourney(id).subscribe(
+      () => {
+        this.showContent = false;
+        this.getTourney().then(
+          (resp: any) => {
+            this.tournamentService.events = resp;
+            this.count = resp.length;
+            this.events = this.tournamentService.events;
+            this.showContent = true;
+            this.createForm(this.infoTournament);
+            this.notify('Produto excluido com sucesso!', 'success');
+          }
+        )
+          .catch(
+            (error) => {
+              this.notify('Ocorreu um erro inesperado!', 'danger');
+            }
+          );
+      },
+      error => {
+        this.notify('Ocorreu um erro inesperado!', 'danger');
+      }
+    );
+  }
+
   openModal(param: any) {
     debugger
     this.type = param.type;
@@ -176,6 +201,15 @@ export class TournamentListComponent implements OnInit {
     }
     let uikitModal = UIkit.modal('#register-tournament');
     uikitModal.show()
+  }
+
+  private notify(msg: string, status: string) {
+    UIkit.notification({
+      message: msg,
+      status: status,
+      pos: 'top-center',
+      timeout: 2000
+    });
   }
 
 }
