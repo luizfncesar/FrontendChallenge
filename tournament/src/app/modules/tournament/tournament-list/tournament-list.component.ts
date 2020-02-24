@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TournamentService } from 'src/app/service/tournament.service';
 import { EventModel } from 'src/app/models/tournament/event.model';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { Router } from "@angular/router";
 declare var UIkit: any;
 
 @Component({
@@ -35,7 +36,8 @@ export class TournamentListComponent implements OnInit {
 
   constructor(
     private tournamentService: TournamentService,
-    private readonly formBuilder: FormBuilder
+    private readonly formBuilder: FormBuilder,
+    private router: Router
   ) {
 
   }
@@ -61,7 +63,7 @@ export class TournamentListComponent implements OnInit {
 
   private getTourney() {
     return new Promise((resolve, reject) => {
-      this.tournamentService.getTourney().subscribe(
+      this.tournamentService.getEvents().subscribe(
         (resp: any) => {
           resolve(resp);
         },
@@ -189,6 +191,36 @@ export class TournamentListComponent implements OnInit {
     );
   }
 
+  changeStatus(body: string) {
+    let tournament: any = body;
+    tournament.allowed = !tournament.allowed;
+    debugger
+    this.tournamentService.updateTorney(tournament.id, tournament).subscribe(
+      () => {
+        this.showContent = false;
+        this.getTourney().then(
+          (resp: any) => {
+            this.tournamentService.events = resp;
+            this.count = resp.length;
+            this.events = this.tournamentService.events;
+            this.showContent = true;
+            this.createForm(this.infoTournament);
+            this.notify('Status alterado com sucesso!', 'success');
+          }
+        )
+          .catch(
+            (error) => {
+              this.notify('Ocorreu um erro inesperado!', 'danger');
+            }
+          );
+      },
+      error => {
+        this.notify('Ocorreu um erro inesperado!', 'danger');
+      }
+    );
+      
+  }
+
   openModal(param: any) {
     debugger
     this.type = param.type;
@@ -209,6 +241,17 @@ export class TournamentListComponent implements OnInit {
       status: status,
       pos: 'top-center',
       timeout: 2000
+    });
+  }
+
+  openPageTourney(id: string) {
+    var myurl = `tournament/${id}`;
+    this.router.navigateByUrl(myurl).then(e => {
+      if (e) {
+        console.log("Navigation is successful!");
+      } else {
+        console.log("Navigation has failed!");
+      }
     });
   }
 

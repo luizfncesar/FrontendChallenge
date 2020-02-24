@@ -58,7 +58,7 @@ export class TeamListComponent implements OnInit {
 
   private getTourney() {
     return new Promise((resolve, reject) => {
-      this.tournamentService.getTourney().subscribe(
+      this.tournamentService.getEvents().subscribe(
         (resp: any) => {
           resolve(resp);
         },
