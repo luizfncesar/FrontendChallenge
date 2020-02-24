@@ -1,0 +1,117 @@
+<div uk-grid class="uk-child-width-1-1">
+    <div>
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-header uk-flex uk-flex-between uk-flex-middle">
+                <span>Lista de {{nameList}}</span>
+                <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">cadastrar</button>
+
+            </div>
+            <div class="uk-card-body">
+                <div uk-filter="target: .js-filter">
+                    <ul class="uk-subnav uk-subnav-pill">
+                        <li class="uk-active" uk-filter-control="sort: data-date"><a href="#">Ascending</a></li>
+                        <li uk-filter-control="sort: data-date; order: desc"><a href="#">Descending</a></li>
+                    </ul>
+                    <table class="uk-table uk-table-striped" >
+                        <thead>
+                            <tr>
+                                <th class="uk-width-auto">Status</th>
+                                <th class="uk-width-1-2">Nome</th>
+                                <th class="uk-width-1-4">Data de criação</th>
+                                <th class="uk-width-auto"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="js-filter" uk-height-match="row: false">
+                                <tr data-date="2017-06-01">
+                                        <td>
+                                            <a><span class="uk-icon-button" uk-icon="ban"></span></a>
+                                        </td>
+                                        <td>Extensivo</td>
+                                        <td>01/06/17</td>
+                                        <td>
+                                            <a class="uk-icon-button" >
+                                                <span class="uk-icon-button" uk-icon="cog"></span>
+                                            </a>
+                                            <div uk-dropdown="mode: click; pos: top-right">
+                                                <ul class="uk-nav uk-dropdown-nav">
+                                                    <li class="uk-nav-header">Configuração</li>
+                                                    <li><a href="#">Alterar status</a></li>
+                                                    <li><a href="#">Editar</a></li>
+                                                    <li class="uk-nav-divider"></li>
+                                                    <li><a href="#">Excluir</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                            <tr data-date="2019-06-01">
+                                <td>
+                                    <a><span class="uk-icon-button" uk-icon="ban"></span></a>
+                                </td>
+                                <td>Extensivo</td>
+                                <td>01/06/19</td>
+                                <td>
+                                    <a class="uk-icon-button" >
+                                        <span class="uk-icon-button" uk-icon="cog"></span>
+                                    </a>
+                                    <div uk-dropdown="mode: click; pos: top-right">
+                                        <ul class="uk-nav uk-dropdown-nav">
+                                            <li class="uk-nav-header">Configuração</li>
+                                            <li><a href="#">Alterar status</a></li>
+                                            <li><a href="#">Editar</a></li>
+                                            <li class="uk-nav-divider"></li>
+                                            <li><a href="#">Excluir</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-date="2019-08-11">
+                                <td>
+                                    <a><span class="uk-icon-button" uk-icon="check"></span></a>
+                                </td>
+                                <td>Intensivo</td>
+                                <td>11/08/19</td>
+                                <td>
+                                    <a class="uk-icon-button" >
+                                        <span class="uk-icon-button" uk-icon="cog"></span>
+                                    </a>
+                                    <div uk-dropdown="mode: click; pos: top-right">
+                                        <ul class="uk-nav uk-dropdown-nav">
+                                            <li class="uk-nav-header">Configuração</li>
+                                            <li><a href="#">Alterar status</a></li>
+                                            <li><a href="#">Editar</a></li>
+                                            <li class="uk-nav-divider"></li>
+                                            <li><a href="#">Excluir</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-date="2019-03-09">
+                                <td>
+                                    <a><span class="uk-icon-button" uk-icon="check"></span></a>
+                                </td>
+                                <td>Medeletro</td>
+                                <td>09/03/19</td>
+                                <td>
+                                    <a class="uk-icon-button" >
+                                        <span class="uk-icon-button" uk-icon="cog"></span>
+                                    </a>
+                                    <div uk-dropdown="mode: click; pos: top-right">
+                                        <ul class="uk-nav uk-dropdown-nav">
+                                            <li class="uk-nav-header uk-text-center">Configuração</li>
+                                            <li><a href="#">ALTERAR STATUS</a></li>
+                                            <li><a href="#">EDITAR</a></li>
+                                            <li class="uk-nav-divider"></li>
+                                            <li class="uk-text-center">
+                                                <button href="#" class="uk-button uk-label uk-label-danger uk-text-center">Excluir</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
