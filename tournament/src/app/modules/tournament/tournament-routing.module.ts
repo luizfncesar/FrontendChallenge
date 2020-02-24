@@ -13,6 +13,10 @@ const routes: Routes = [
     component: ValoranComponent
   },
   {
+    path: 'tournament/:id',
+    component: ValoranComponent
+  },
+  {
     path: 'tournament-list',
     component: TournamentListComponent
   },
