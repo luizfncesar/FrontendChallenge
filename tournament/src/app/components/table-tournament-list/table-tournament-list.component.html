@@ -1,0 +1,72 @@
+<div uk-grid class="uk-child-width-1-1">
+    <div>
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-header uk-flex uk-flex-between uk-flex-middle">
+          <span>Lista de {{nameList}}</span>
+          <button class="uk-button uk-button-default uk-margin-small-right" type="button" (click)="openRegister()">cadastrar</button>
+        </div>
+        <div class="uk-card-body">
+          <div uk-filter="target: .js-filter">
+            <!-- <ul class="uk-subnav uk-subnav-pill">
+                              <li class="uk-active" uk-filter-control="sort: data-date"><a href="#">Ascending</a></li>
+                              <li uk-filter-control="sort: data-date; order: desc"><a href="#">Descending</a></li>
+                          </ul> -->
+            <table class="uk-table uk-table-striped">
+              <thead>
+                <tr>
+                  <th class="uk-width-auto">Status</th>
+                  <th class="uk-width-1-2">Nome</th>
+                  <th class="uk-width-1-4">Times</th>
+                  <th class="uk-width-auto"></th>
+                </tr>
+              </thead>
+              <tbody class="js-filter" uk-height-match="row: false">
+                <!-- data-date="2019-08-11" -->
+                <tr *ngFor="let info of listTournament">
+                  <td>
+                    <a (click)="clickStatus(info)">
+                      <span *ngIf="info.allowed" class="uk-icon-button" uk-icon="check"></span>
+                      <span *ngIf="!info.allowed" class="uk-icon-button" uk-icon="ban"></span>
+                    </a>
+                  </td>
+                  <td>{{info.title}}</td>
+                  <!-- <td>{{info.teams.length}}</td> -->
+                  <td>2</td>
+                  <td>
+                    <a class="uk-icon-button">
+                      <span class="uk-icon-button" uk-icon="cog"></span>
+                    </a>
+                    <div id="dropdown" uk-dropdown="mode: click; pos: top-right">
+                      <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-nav-header uk-text-center">
+                          Configuração
+                        </li>
+                        <li>
+                          <a (click)="clickStatus(info)">
+                            <span class="ion-ios-medical"></span><span
+                              class="uk-padding-small uk-padding-remove-top">Alterar Status</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a (click)="openEdit(info)">
+                            <span class="ion-clipboard"></span><span
+                              class="uk-padding-small uk-padding-remove-top">Editar</span>
+                          </a>
+                        </li>
+                        <li class="uk-nav-divider"></li>
+                        <li class="uk-text-center">
+                          <button type="button" (click)="deleteItem(info._id)"
+                            class="uk-button uk-label uk-label-danger uk-text-center">Excluir</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
