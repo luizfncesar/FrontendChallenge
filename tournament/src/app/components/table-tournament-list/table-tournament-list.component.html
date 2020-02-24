@@ -29,7 +29,7 @@
                       <span *ngIf="!info.allowed" class="uk-icon-button" uk-icon="ban"></span>
                     </a>
                   </td>
-                  <td>{{info.title}}</td>
+                  <td><a (click)="openPage(info.id)">{{info.title}}</a></td>
                   <td>{{info.teams.length}}</td>
                   <td>
                     <a class="uk-icon-button">
@@ -47,7 +47,7 @@
                           </a>
                         </li>
                         <li>
-                          <a (click)="openEdit(info)">
+                          <a (click)="openEdit(info.id)">
                             <span class="ion-clipboard"></span><span
                               class="uk-padding-small uk-padding-remove-top">Editar</span>
                           </a>

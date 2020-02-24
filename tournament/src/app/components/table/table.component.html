@@ -1,5 +1,5 @@
 <main id="tournament">
-    <div *ngFor="let event of listTable; let n=index">
+    <div>
         <h1>{{event.title}}</h1>
         <div class="main">
             <ul class="round round-{{l+1}}" *ngFor="let e of event.rounds; let l=index;">
@@ -14,5 +14,3 @@
         </div>		
     </div>
 </main>
-
-<button class="uk-button uk-button-default uk-margin-small-right" type="button" (click)="openRegister()">cadastrar</button>

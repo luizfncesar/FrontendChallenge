@@ -10,7 +10,7 @@ declare var UIkit: any;
 export class TableComponent implements OnInit {
 
   // @Input() nameList: string;
-  @Input() listTable: any[] = [];
+  @Input() event: any[] = [];
 
   @Output() changeStatus: EventEmitter<any> = new EventEmitter();
   @Output() deleteProduct: EventEmitter<string> = new EventEmitter();
