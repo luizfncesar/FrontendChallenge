@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TournamentService } from 'src/app/service/tournament.service';
 import { EventModel } from 'src/app/models/tournament/event.model';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 declare var UIkit: any;
 
 
@@ -14,6 +15,7 @@ declare var UIkit: any;
 export class ValoranComponent implements OnInit {
 
   form: FormGroup;
+  tournament_id: any;
   title: string = 'Valoran Tournament';
   events: Array<EventModel[]>;
   showContent: boolean = false;
@@ -31,20 +33,23 @@ export class ValoranComponent implements OnInit {
 
   constructor(
     private tournamentService: TournamentService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute
   ) {
 
   }
 
   ngOnInit() {
+
+    this.tournament_id = this.route.snapshot.params.id;
     
     this.getTourney().then(
       (resp: any) => {
+        debugger;
         this.tournamentService.events = resp;
-        this.count = resp.length;
         this.events = this.tournamentService.events;
         this.showContent = true;
-        this.createForm(this.infoTournament);
+        // this.createForm(this.infoTournament);
       }
     )
       .catch(
@@ -57,7 +62,7 @@ export class ValoranComponent implements OnInit {
 
   private getTourney() {
     return new Promise((resolve, reject) => {
-      this.tournamentService.getTourney().subscribe(
+      this.tournamentService.getTourney(this.tournament_id).subscribe(
         (resp: any) => {
           resolve(resp);
         },

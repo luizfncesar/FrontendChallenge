@@ -2,7 +2,7 @@
     <app-breadcrumb [titleBreadcrumb]="title" [iconBreadcrumb]="'ion-cube'"></app-breadcrumb>
     <div class="uk-section-small" *ngIf="showContent">
         <div class="uk-container uk-container-large">
-            <app-table [listTable]="events" (changeStatus)="changeStatus($event)" (deleteProduct)="deleteProduct($event)" (openModal)="openModal($event)"></app-table>
+            <app-table [event]="events" (changeStatus)="changeStatus($event)" (deleteProduct)="deleteProduct($event)" (openModal)="openModal($event)"></app-table>
         </div>
     </div>
     <div class="uk-height-medium">

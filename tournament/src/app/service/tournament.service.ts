@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Constants } from 'src/app/constants/constants';
 import { EventModel } from '../models/tournament/event.model';
 import { GamesModel } from '../models/tournament/game.model';
 import { RoundModel } from '../models/tournament/round.model';
@@ -18,8 +17,6 @@ export class TournamentService {
 
   public events: any;
 
-  // private isLocal: boolean = (environment.environmentType === Constants.environmentLocal);
-
   private _randomTeam(arrayRandomTeam) {
     const randomTeam = arrayRandomTeam[Math.floor(Math.random() * arrayRandomTeam.length)];
     arrayRandomTeam.splice(randomTeam, 1);
@@ -31,11 +28,14 @@ export class TournamentService {
   }
 
   deleteTourney(id: string) {
-    debugger
     return this.http.delete(`${environment.API}/team-list/${id}`);
   }
   
-  getTourney() {
+  getTourney(id: any) {
+    return this.http.get(`${environment.API}/team-list/${id}`);
+  }
+
+  getEvents() {
     return this.http.get(`${environment.API}/team-list`);
   }
 
@@ -44,7 +44,6 @@ export class TournamentService {
   }
 
   createTourney(info: any) {
-    debugger
     let id = info.id;
     let title = info.title;
     let totalTeam = info.grid;
