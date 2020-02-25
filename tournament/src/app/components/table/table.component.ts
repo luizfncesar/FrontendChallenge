@@ -12,8 +12,7 @@ export class TableComponent implements OnInit {
   // @Input() nameList: string;
   @Input() event: any[] = [];
 
-  @Output() changeStatus: EventEmitter<any> = new EventEmitter();
-  @Output() deleteProduct: EventEmitter<string> = new EventEmitter();
+  @Output() changeResult: EventEmitter<any> = new EventEmitter();
   @Output() openModal: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
@@ -21,19 +20,14 @@ export class TableComponent implements OnInit {
   ngOnInit() {
   }
 
-  clickStatus(product: any) {
-    this.closeDropdown();
-    this.changeStatus.emit(product);
-  }
-
-  deleteItem(id: string) {
-    this.closeDropdown();
-    this.deleteProduct.emit(id);
-  }
-
-  openRegister() {
+  clickResult(games: any, round: any) {
+    debugger
+    // this.closeDropdown();
+    // this.changeResult.emit(round, game);
     const param = {
-      type: 'register'
+      games: games,
+      round: round,
+      type: 'edit'
     }
     this.openModal.emit(param);
   }

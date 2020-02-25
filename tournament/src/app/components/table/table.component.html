@@ -1,16 +1,26 @@
-<main id="tournament">
-    <div>
-        <h1>{{event.title}}</h1>
-        <div class="main">
-            <ul class="round round-{{l+1}}" *ngFor="let e of event.rounds; let l=index;">
-                <ng-container *ngFor="let k of e.games; let j=index;">
-                    <li class="spacer">&nbsp;</li>
-                    <li class="game game-top winner">{{k.teamA}} <span>{{k.scoreA}}</span></li>
-                    <li class="game game-spacer">&nbsp;</li>
-                    <li class="game game-bottom ">{{k.teamB}} <span>{{k.scoreB}}</span></li>
-                </ng-container>
-                <li class="spacer">&nbsp;</li>
-            </ul>
-        </div>		
+<div class="tournament-container">
+    <div class="tournament-headers">
+        <h3>Round of 16</h3>
+        <h3>Quarter-Finals</h3>
+        <h3>Semi-Finals</h3>
+        <h3>Final</h3>
+        <h3>Winner</h3>
     </div>
-</main>
+
+    <div class="tournament-brackets">
+        <ul class="bracket bracket-{{l+1}}" *ngFor="let e of event.rounds; let l=index;">
+            <ng-container *ngFor="let k of e.games; let j=index;">
+                <li class="team-item">
+                    <button class="button--table"(click)="clickResult(e, k)" [disabled]="k.status" >
+                        <span [ngClass]="{'winner': k.win === k.teamA}">{{k.teamA}}</span> <time>{{k.scoreA}}</time> -
+                        <time>{{k.scoreB}}</time> <span [ngClass]="{'winner': k.win === k.teamB}">{{k.teamB}}</span>
+                    </button>
+                </li>
+                </ng-container>
+            </ul>   
+
+        <ul class="bracket bracket-5">
+        <li class="team-item">Champions </li>
+        </ul>  
+    </div>
+</div>
