@@ -1,6 +1,6 @@
 <div class="content-padder content-background">
-    <app-breadcrumb [titleBreadcrumb]="title" [iconBreadcrumb]="'ion-cube'"></app-breadcrumb>
-    <div class="uk-section-small" *ngIf="showContent">
+    <app-breadcrumb [titleBreadcrumb]="title" [iconBreadcrumb]="'ion-trophy'"></app-breadcrumb>
+    <div class="uk-section-small uk-section-color uk-height-medium" *ngIf="showContent">
         <app-table-tournament-list [nameList]="Torneio" [listTournament]="events" (changeStatus)="changeStatus($event)" (deleteTourney)="deleteTourney($event)" (openModal)="openModal($event)" (openPageTourney)="openPageTourney($event)"></app-table-tournament-list>
     </div>
     <div class="uk-height-medium" *ngIf="!showContent">

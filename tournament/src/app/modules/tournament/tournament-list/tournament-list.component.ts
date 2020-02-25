@@ -13,7 +13,7 @@ declare var UIkit: any;
 export class TournamentListComponent implements OnInit {
 
   form: FormGroup;
-  title: string = 'Tournament List';
+  title: string = 'Lista de Torneios';
   events: Array<EventModel[]>;
   showContent: boolean = false;
   count: number = 0;

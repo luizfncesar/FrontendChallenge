@@ -16,7 +16,7 @@ export class ValoranComponent implements OnInit {
 
   form: FormGroup;
   tournament_id: any;
-  title: string = 'Valoran Tournament';
+  title: string = '';
   events: Array<EventModel[]>;
   showContent: boolean = false;
   count: number = 0;
@@ -47,6 +47,7 @@ export class ValoranComponent implements OnInit {
     this.showContent = false;
     this.getTourney().then(
       (resp: any) => {
+        this.title = resp.title;
         this.tournamentService.events = resp;
         this.events = this.tournamentService.events;
         this.showContent = true;
