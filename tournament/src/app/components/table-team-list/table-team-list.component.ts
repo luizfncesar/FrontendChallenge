@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table-team-list',
@@ -9,9 +9,11 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class TableTeamListComponent implements OnInit {
 
+  @Input() event: any[] = [];
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
