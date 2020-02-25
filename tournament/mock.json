@@ -165,16 +165,16 @@
             {
               "round": 2,
               "game": 11,
-              "scoreA": null,
-              "scoreB": null,
+              "scoreA": 2,
+              "scoreB": 1,
               "teamA": "Team C",
               "teamB": "Team G",
-              "status": true,
+              "status": false,
               "next": [
                 14,
                 "teamA"
               ],
-              "win": null,
+              "win": "Team C",
               "countTeams": 4
             },
             {
@@ -216,7 +216,7 @@
               "game": 14,
               "scoreA": "2",
               "scoreB": "3",
-              "teamA": "vencedor do jogo: 11",
+              "teamA": "Team C",
               "teamB": "Team M",
               "status": false,
               "next": [
@@ -636,7 +636,7 @@
       "id": 3,
       "title": "Valoran 2018",
       "totalTeam": 1,
-      "allowed": true,
+      "allowed": false,
       "rounds": [
         {
           "games": [
@@ -673,91 +673,91 @@
             {
               "round": 1,
               "game": 3,
-              "scoreA": 0,
+              "scoreA": "2",
               "scoreB": 0,
               "teamA": "Time 9",
               "teamB": "Time 6",
-              "status": true,
+              "status": false,
               "next": [
                 10,
                 "teamA"
               ],
-              "win": null,
+              "win": "Time 9",
               "countTeams": 0
             },
             {
               "round": 1,
               "game": 4,
-              "scoreA": 0,
+              "scoreA": "3",
               "scoreB": 0,
               "teamA": "Time 11",
               "teamB": "Time 13",
-              "status": true,
+              "status": false,
               "next": [
                 10,
                 "teamB"
               ],
-              "win": null,
+              "win": "Time 11",
               "countTeams": 0
             },
             {
               "round": 1,
               "game": 5,
-              "scoreA": 0,
+              "scoreA": "2",
               "scoreB": 0,
               "teamA": "Time 1",
               "teamB": "Time 14",
-              "status": true,
+              "status": false,
               "next": [
                 11,
                 "teamA"
               ],
-              "win": null,
+              "win": "Time 1",
               "countTeams": 0
             },
             {
               "round": 1,
               "game": 6,
               "scoreA": 0,
-              "scoreB": 0,
+              "scoreB": "2",
               "teamA": "Time 15",
               "teamB": "Time 16",
-              "status": true,
+              "status": false,
               "next": [
                 11,
                 "teamB"
               ],
-              "win": null,
+              "win": "Time 16",
               "countTeams": 0
             },
             {
               "round": 1,
               "game": 7,
               "scoreA": 0,
-              "scoreB": 0,
+              "scoreB": "2",
               "teamA": "Time 7",
               "teamB": "Time 2",
-              "status": true,
+              "status": false,
               "next": [
                 12,
                 "teamA"
               ],
-              "win": null,
+              "win": "Time 2",
               "countTeams": 0
             },
             {
               "round": 1,
               "game": 8,
-              "scoreA": 0,
-              "scoreB": 0,
+              "scoreA": "2",
+              "scoreB": "3",
               "teamA": "Time 10",
               "teamB": "Time 4",
-              "status": true,
+              "status": false,
               "next": [
                 12,
                 "teamB"
               ],
-              "win": null,
+              "win": "Time 4",
               "countTeams": 0
             }
           ]
@@ -767,62 +767,62 @@
             {
               "round": 2,
               "game": 9,
-              "scoreA": null,
-              "scoreB": null,
+              "scoreA": "1",
+              "scoreB": "2",
               "teamA": "Time 12",
               "teamB": "Time 3",
-              "status": true,
+              "status": false,
               "next": [
                 13,
                 "teamA"
               ],
-              "win": null,
+              "win": "Time 3",
               "countTeams": 1
             },
             {
               "round": 2,
               "game": 10,
-              "scoreA": null,
-              "scoreB": null,
-              "teamA": null,
-              "teamB": null,
+              "scoreA": "2",
+              "scoreB": "1",
+              "teamA": "Time 9",
+              "teamB": "Time 11",
               "status": false,
               "next": [
                 13,
                 "teamB"
               ],
-              "win": null,
-              "countTeams": 0
+              "win": "Time 9",
+              "countTeams": 1
             },
             {
               "round": 2,
               "game": 11,
-              "scoreA": null,
-              "scoreB": null,
-              "teamA": null,
-              "teamB": null,
+              "scoreA": "1",
+              "scoreB": "2",
+              "teamA": "Time 1",
+              "teamB": "Time 16",
               "status": false,
               "next": [
                 14,
                 "teamA"
               ],
-              "win": null,
-              "countTeams": 0
+              "win": "Time 16",
+              "countTeams": 1
             },
             {
               "round": 2,
               "game": 12,
-              "scoreA": null,
-              "scoreB": null,
-              "teamA": null,
-              "teamB": null,
+              "scoreA": "1",
+              "scoreB": "2",
+              "teamA": "Time 2",
+              "teamB": "Time 4",
               "status": false,
               "next": [
                 14,
                 "teamB"
               ],
-              "win": null,
-              "countTeams": 0
+              "win": "Time 4",
+              "countTeams": 1
             }
           ]
         },
@@ -831,32 +831,32 @@
             {
               "round": 3,
               "game": 13,
-              "scoreA": null,
-              "scoreB": null,
-              "teamA": null,
-              "teamB": null,
+              "scoreA": "1",
+              "scoreB": "2",
+              "teamA": "Time 3",
+              "teamB": "Time 9",
               "status": false,
               "next": [
                 15,
                 "teamA"
               ],
-              "win": null,
-              "countTeams": 0
+              "win": "Time 9",
+              "countTeams": 1
             },
             {
               "round": 3,
               "game": 14,
-              "scoreA": null,
-              "scoreB": null,
-              "teamA": null,
-              "teamB": null,
+              "scoreA": "1",
+              "scoreB": "2",
+              "teamA": "Time 16",
+              "teamB": "Time 4",
               "status": false,
               "next": [
                 15,
                 "teamB"
               ],
-              "win": null,
-              "countTeams": 0
+              "win": "Time 4",
+              "countTeams": 1
             }
           ]
         },
@@ -865,17 +865,17 @@
             {
               "round": 4,
               "game": 15,
-              "scoreA": null,
-              "scoreB": null,
-              "teamA": null,
-              "teamB": null,
+              "scoreA": "2",
+              "scoreB": "1",
+              "teamA": "Time 9",
+              "teamB": "Time 4",
               "status": false,
               "next": [
                 15,
                 "teamB"
               ],
-              "win": null,
-              "countTeams": 0
+              "win": "Time 9",
+              "countTeams": 1
             }
           ]
         }
@@ -945,7 +945,8 @@
           "idTeam": 16,
           "name": "Time 16"
         }
-      ]
+      ],
+      "winner": "Time 9"
     }
   ]
 }
