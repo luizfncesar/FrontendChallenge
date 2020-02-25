@@ -249,8 +249,13 @@ export class TournamentListComponent implements OnInit {
     });
   }
 
-  openPageTourney(id: string) {
-    var myurl = `tournament/${id}`;
+  openPageTourney(param: any) {
+    let myurl = '';
+    if( param.type === 'team') {
+      myurl = `team-list/${param.id}`;
+    } else {
+      myurl = `tournament/${param.id}`;
+    }
     this.router.navigateByUrl(myurl).then(e => {
       if (e) {
         console.log("Navigation is successful!");

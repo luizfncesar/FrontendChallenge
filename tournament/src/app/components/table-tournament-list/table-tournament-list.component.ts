@@ -34,8 +34,12 @@ export class TableTournamentListComponent implements OnInit {
     this.deleteTourney.emit(id);
   }
 
-  openPage(id: string) {
-    this.openPageTourney.emit(id);
+  openPage(id: string, type: string) {
+    const param = {
+      id: id,
+      type: type
+    }
+    this.openPageTourney.emit(param);
   }
 
   openRegister() {
