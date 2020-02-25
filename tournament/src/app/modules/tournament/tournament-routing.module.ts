@@ -8,9 +8,9 @@ import { TournamentListComponent } from './tournament-list/tournament-list.compo
 
 
 const routes: Routes = [
-  {
-    path: '',
-    component: ValoranComponent
+
+  { path: '', 
+    redirectTo: '/tournament-list'
   },
   {
     path: 'tournament/:id',
