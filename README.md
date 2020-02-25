@@ -1,3 +1,71 @@
+
+# Torneio de Valoran
+
+  
+
+Projeto simples desenvolvido em Angular para gerenciar os torneios de Valoran. O sistema é de mata-mata compostos por times e chaves, onde são gerados os vencedores até o grande vencedor do torneio.
+
+  
+
+## O que é permitido
+
+  
+
+- Gerenciar e registrar torneios
+
+- Registrar equipes para o torneios
+
+- Gerenciar resultados
+
+  
+
+## Dependências
+
+ - json-server
+ 
+- uikit
+
+  
+
+## Dependências de desenvolvimento
+
+  
+
+- typescript
+
+
+
+## Rodar o projeto para desenvolvimento
+
+  
+
+Para a execução pode estar sendo utilizado o npm ou o yarn (recomendável uso do yarn), basta seguir os passos:
+
+  
+
+```$ yarn install```
+
+```$ json-server --watch mock.json```
+
+```$ yarn start```
+
+  
+
+Lembrando que é importante que tenha toda a depencias instaladas.
+
+| Status | Tarefas |
+| ------ | ------ |
+| OK | Angular2+ |
+| OK | Queremos como resultado uma solução simples, legível e de qualidade |
+| OK | Código feito e comentado em inglês please.
+| OK | Não utilize soluções prontas. Nós as conhecemos.
+| *| Foi utilizado uikit e tournament brackets para layout |
+| OK | SASS |
+| NO | Layout puro com BEM  |
+| * | Gostaria te ter utilizado, tentei forcar mais no JS  |
+
+## História
+
 <p align="center"><img src="https://www.nibo.com.br/logo-nibo.png" width="150" /></p>
 <h1 align="center">Nibo Front-end Challenge - Level 1</h1>
 
@@ -63,3 +131,6 @@ Tem alguma dúvida? Utilize o [canal de issues](https://github.com/nibodev/Front
 **NIBO - Desenvolvimento de alta performance para geeks inquietos**
 
 Boa sorte :D
+
+
+
