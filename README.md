@@ -41,9 +41,9 @@ Projeto simples desenvolvido em Angular para gerenciar os torneios de Valoran. O
 
 Para a execução pode estar sendo utilizado o npm ou o yarn (recomendável uso do yarn), basta seguir os passos:
 
-  ```$npm i json-server```
+  ``` $npm i json-server```
   
-  ```$npm i uikit```
+  ``` $npm i uikit```
 
 ```$ yarn install```
 
