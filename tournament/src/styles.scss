@@ -99,8 +99,7 @@ h1 {
     background-color: white;
     transition: 0.3s;
 }
-
-.uk-modal .uk-button-primary:focus, .uk-modal .uk-button-primary:hover, 
+ 
 .uk-button-primary:focus, .uk-button-primary:hover,
 .uk-button-default:focus, .uk-button-default:hover {
     background-color: #757575;
@@ -109,13 +108,25 @@ h1 {
     transition: 0.3s;
 }
 
-.uk-modal .uk-button-primary,
 .uk-button-primary {
     background-color: #292929;
     color: #fff;
     border: 1px solid transparent;
     transition: 0.3s;
     cursor: pointer;
+}
+
+.uk-link, a {
+    color: #123150;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.uk-button-danger:disabled, .uk-button-default:disabled, .uk-button-primary:disabled, .uk-button-secondary:disabled,
+.uk-button-danger:disabled:hover, .uk-button-default:disabled:hover, .uk-button-primary:disabled:hover, .uk-button-secondary:disabled:hover {
+    background-color: transparent;
+    color: #999;
+    border-color: #e5e5e5;
 }
 
 .uk-card-default {
