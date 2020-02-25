@@ -97,13 +97,22 @@ h1 {
 
 .uk-button-default {
     background-color: white;
+    transition: 0.3s;
 }
 
-.uk-button-default,
+.uk-button-primary:focus, .uk-button-primary:hover,
+.uk-button-default:focus, .uk-button-default:hover {
+    background-color: #757575;
+    color: #fff;
+    border-color: #757575;
+    transition: 0.3s;
+}
+
 .uk-button-primary {
     background-color: #292929;
     color: #fff;
     border: 1px solid transparent;
+    transition: 0.3s;
 }
 
 .uk-card-default {
