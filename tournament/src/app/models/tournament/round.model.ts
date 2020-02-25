@@ -8,4 +8,5 @@ export class RoundModel {
   status?: Boolean = false;
   next?: any [] = [];
   win?: string = null;
+  countTeams?: number = 0;
 }
