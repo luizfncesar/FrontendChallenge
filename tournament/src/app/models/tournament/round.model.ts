@@ -5,7 +5,7 @@ export class RoundModel {
   scoreB?: number = null;
   teamA?: string = '';
   teamB?: string = '';
-  status?: string = 'close';
+  status?: Boolean = false;
   next?: any [] = [];
   win?: string = null;
 }
