@@ -65,10 +65,6 @@ Lembrando que é importante que tenha toda a depencias instaladas.
 | * | Gostaria te ter utilizado, tentei forcar mais no JS  |
 
 ## História
-  
-
-O mesmo já fará a instalação das dependências, instalar o pm2 de forma global no servidor e fazer o start da aplicação no pm2.
-
 
 <p align="center"><img src="https://www.nibo.com.br/logo-nibo.png" width="150" /></p>
 <h1 align="center">Nibo Front-end Challenge - Level 1</h1>
