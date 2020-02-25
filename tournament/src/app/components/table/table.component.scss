@@ -76,6 +76,27 @@
   flex: 1;
 }
 
+.button--disabled {
+  cursor: no-drop;
+
+  &:hover {
+    background: #a0a0a0;
+  }
+}
+
+.info--tourney {
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #610303;
+  font-weight: 900;
+}
+
+.image--winner {
+  max-width: 90px;
+  margin: 0 auto;
+}
+
 .team-item {
   background-color: #f4f4f4;
   padding: .5rem;
@@ -85,6 +106,11 @@
   vertical-align: middle;
   line-height: 2;
   text-align: center;
+
+  span {
+    display: block;
+    font-weight: 600;
+  }
 }
 
 .team-item:after {

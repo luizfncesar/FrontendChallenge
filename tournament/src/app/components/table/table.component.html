@@ -1,3 +1,5 @@
+<h3 class="info--tourney" *ngIf="!statusTourney">Este torneio está desativado</h3>
+
 <div class="tournament-container">
     <div class="tournament-headers">
         <h3>Rodada de 16</h3>
@@ -11,16 +13,21 @@
         <ul class="bracket bracket-{{l+1}}" *ngFor="let e of event.rounds; let l=index;">
             <ng-container *ngFor="let k of e.games; let j=index;">
                 <li class="team-item">
-                    <button class="button--table"(click)="clickResult(e, k)" [disabled]="k.status" >
+                    <button class="button--table" [ngClass]="{'button--disabled': !statusTourney}" (click)="clickResult(e, k)" [disabled]="!statusTourney" >
                         <span [ngClass]="{'winner': k.win === k.teamA}">{{k.teamA}}</span> <time>{{k.scoreA}}</time> -
                         <time>{{k.scoreB}}</time> <span [ngClass]="{'winner': k.win === k.teamB}">{{k.teamB}}</span>
                     </button>
                 </li>
-                </ng-container>
-            </ul>   
+            </ng-container>
+        </ul>   
 
         <ul class="bracket bracket-5">
-        <li class="team-item">Champions </li>
+            <li class="team-item">
+                <div class="image--winner">
+                    <img id="avatar" width="100%" class="uk-border-circle uk-align-center uk-margin-remove-bottom" src="./assets/image/avatar/trofeu.png" />
+                </div>
+                <div>Campeão <span>{{winner}}</span></div>
+            </li>
         </ul>  
     </div>
 </div>
