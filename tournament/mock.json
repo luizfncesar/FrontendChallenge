@@ -631,6 +631,321 @@
         }
       ],
       "winner": "Team 8"
+    },
+    {
+      "id": 3,
+      "title": "Valoran 2018",
+      "totalTeam": 1,
+      "allowed": true,
+      "rounds": [
+        {
+          "games": [
+            {
+              "round": 1,
+              "game": 1,
+              "scoreA": "10",
+              "scoreB": 0,
+              "teamA": "Time 12",
+              "teamB": "Time 8",
+              "status": false,
+              "next": [
+                9,
+                "teamA"
+              ],
+              "win": "Time 12",
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 2,
+              "scoreA": 0,
+              "scoreB": "30",
+              "teamA": "Time 5",
+              "teamB": "Time 3",
+              "status": false,
+              "next": [
+                9,
+                "teamB"
+              ],
+              "win": "Time 3",
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 3,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "Time 9",
+              "teamB": "Time 6",
+              "status": true,
+              "next": [
+                10,
+                "teamA"
+              ],
+              "win": null,
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 4,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "Time 11",
+              "teamB": "Time 13",
+              "status": true,
+              "next": [
+                10,
+                "teamB"
+              ],
+              "win": null,
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 5,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "Time 1",
+              "teamB": "Time 14",
+              "status": true,
+              "next": [
+                11,
+                "teamA"
+              ],
+              "win": null,
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 6,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "Time 15",
+              "teamB": "Time 16",
+              "status": true,
+              "next": [
+                11,
+                "teamB"
+              ],
+              "win": null,
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 7,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "Time 7",
+              "teamB": "Time 2",
+              "status": true,
+              "next": [
+                12,
+                "teamA"
+              ],
+              "win": null,
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 8,
+              "scoreA": 0,
+              "scoreB": 0,
+              "teamA": "Time 10",
+              "teamB": "Time 4",
+              "status": true,
+              "next": [
+                12,
+                "teamB"
+              ],
+              "win": null,
+              "countTeams": 0
+            }
+          ]
+        },
+        {
+          "games": [
+            {
+              "round": 2,
+              "game": 9,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": "Time 12",
+              "teamB": "Time 3",
+              "status": true,
+              "next": [
+                13,
+                "teamA"
+              ],
+              "win": null,
+              "countTeams": 1
+            },
+            {
+              "round": 2,
+              "game": 10,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": null,
+              "teamB": null,
+              "status": false,
+              "next": [
+                13,
+                "teamB"
+              ],
+              "win": null,
+              "countTeams": 0
+            },
+            {
+              "round": 2,
+              "game": 11,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": null,
+              "teamB": null,
+              "status": false,
+              "next": [
+                14,
+                "teamA"
+              ],
+              "win": null,
+              "countTeams": 0
+            },
+            {
+              "round": 2,
+              "game": 12,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": null,
+              "teamB": null,
+              "status": false,
+              "next": [
+                14,
+                "teamB"
+              ],
+              "win": null,
+              "countTeams": 0
+            }
+          ]
+        },
+        {
+          "games": [
+            {
+              "round": 3,
+              "game": 13,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": null,
+              "teamB": null,
+              "status": false,
+              "next": [
+                15,
+                "teamA"
+              ],
+              "win": null,
+              "countTeams": 0
+            },
+            {
+              "round": 3,
+              "game": 14,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": null,
+              "teamB": null,
+              "status": false,
+              "next": [
+                15,
+                "teamB"
+              ],
+              "win": null,
+              "countTeams": 0
+            }
+          ]
+        },
+        {
+          "games": [
+            {
+              "round": 4,
+              "game": 15,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": null,
+              "teamB": null,
+              "status": false,
+              "next": [
+                15,
+                "teamB"
+              ],
+              "win": null,
+              "countTeams": 0
+            }
+          ]
+        }
+      ],
+      "teams": [
+        {
+          "idTeam": 1,
+          "name": "Time 1"
+        },
+        {
+          "idTeam": 2,
+          "name": "Time 2"
+        },
+        {
+          "idTeam": 3,
+          "name": "Time 3"
+        },
+        {
+          "idTeam": 4,
+          "name": "Time 4"
+        },
+        {
+          "idTeam": 5,
+          "name": "Time 5"
+        },
+        {
+          "idTeam": 6,
+          "name": "Time 6"
+        },
+        {
+          "idTeam": 7,
+          "name": "Time 7"
+        },
+        {
+          "idTeam": 8,
+          "name": "Time 8"
+        },
+        {
+          "idTeam": 9,
+          "name": "Time 9"
+        },
+        {
+          "idTeam": 10,
+          "name": "Time 10"
+        },
+        {
+          "idTeam": 11,
+          "name": "Time 11"
+        },
+        {
+          "idTeam": 12,
+          "name": "Time 12"
+        },
+        {
+          "idTeam": 13,
+          "name": "Time 13"
+        },
+        {
+          "idTeam": 14,
+          "name": "Time 14"
+        },
+        {
+          "idTeam": 15,
+          "name": "Time 15"
+        },
+        {
+          "idTeam": 16,
+          "name": "Time 16"
+        }
+      ]
     }
   ]
 }

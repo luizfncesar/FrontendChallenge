@@ -193,31 +193,36 @@ export class TournamentListComponent implements OnInit {
 
   changeStatus(body: string) {
     let tournament: any = body;
-    tournament.allowed = !tournament.allowed;
     debugger
-    this.tournamentService.updateTorney(tournament.id, tournament).subscribe(
-      () => {
-        this.showContent = false;
-        this.getTourney().then(
-          (resp: any) => {
-            this.tournamentService.events = resp;
-            this.count = resp.length;
-            this.events = this.tournamentService.events;
-            this.showContent = true;
-            this.createForm(this.infoTournament);
-            this.notify('Status alterado com sucesso!', 'success');
-          }
-        )
-          .catch(
-            (error) => {
-              this.notify('Ocorreu um erro inesperado!', 'danger');
+    if(!tournament.winner) {
+      tournament.allowed = !tournament.allowed;
+      debugger
+      this.tournamentService.updateTorney(tournament.id, tournament).subscribe(
+        () => {
+          this.showContent = false;
+          this.getTourney().then(
+            (resp: any) => {
+              this.tournamentService.events = resp;
+              this.count = resp.length;
+              this.events = this.tournamentService.events;
+              this.showContent = true;
+              this.createForm(this.infoTournament);
+              this.notify('Status alterado com sucesso!', 'success');
             }
-          );
-      },
-      error => {
-        this.notify('Ocorreu um erro inesperado!', 'danger');
-      }
-    );
+          )
+            .catch(
+              (error) => {
+                this.notify('Ocorreu um erro inesperado!', 'danger');
+              }
+            );
+        },
+        error => {
+          this.notify('Ocorreu um erro inesperado!', 'danger');
+        }
+      );
+    } else {
+      this.notify('Esse evento já terminou!', 'danger');
+    }
       
   }
 
