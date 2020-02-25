@@ -108,14 +108,14 @@ export class TournamentService {
             nextGame = nextGame + 1;
             event.next = [nextGame, 'teamA'];
             
-            event.teamA = round < 1 ? arrayTeam[countRandomTeam++].name : `vencedor do jogo: ${countNextGames++}`;
-            event.teamB = round < 1 ? arrayTeam[countRandomTeam++].name : `vencedor do jogo: ${countNextGames++}`;
+            event.teamA = round < 1 ? arrayTeam[countRandomTeam++].name : null;
+            event.teamB = round < 1 ? arrayTeam[countRandomTeam++].name : null;
             
           } else {
             event.next = [nextGame, 'teamB']
             
-            event.teamA = round < 1 ? arrayTeam[countRandomTeam++].name : `vencedor do jogo: ${countNextGames++}`;
-            event.teamB = round < 1 ? arrayTeam[countRandomTeam++].name : `vencedor do jogo: ${countNextGames++}`;
+            event.teamA = round < 1 ? arrayTeam[countRandomTeam++].name : null;
+            event.teamB = round < 1 ? arrayTeam[countRandomTeam++].name : null;
 
           }
 
@@ -163,21 +163,31 @@ export class TournamentService {
 
     for (let index = 0; index < bodySearch.games.length; index++) {
       if(bodySearch.games[index].game === round.game) {
-        bodySearch.games[index].status = false;
         bodySearch.games[index].scoreA = results.scoreA;
         bodySearch.games[index].scoreB = results.scoreB;
         bodySearch.games[index].win = results.scoreA > results.scoreB ? bodySearch.games[index].teamA : results.scoreB > results.scoreA ? bodySearch.games[index].teamB : "" ;
+        bodySearch.games[index].status = bodySearch.games[index].win ? false : true;
+
 
         param.win = bodySearch.games[index].win;
         param.nextGame = bodySearch.games[index].next[1];
         param.nextTeam = bodySearch.games[index].next[0];
+
         break;
       }
     }
     
-    if(param.win && round.round < 4) {
+    if(param.win !== '' && round.round < 4) {
       let nextGame: any = body.rounds[round.round];
       for (let index = 0; index < nextGame.games.length; index++) {
+
+        if(nextGame.games[index].countTeams < 1) {
+          nextGame.games[index].countTeams++;
+          nextGame.games[index].status = false;
+        } else {
+          nextGame.games[index].status = true;
+        }
+
         if (param.nextGame === 'teamA' && nextGame.games[index].game === param.nextTeam) {
           nextGame.games[index].teamA = param.win;
           break

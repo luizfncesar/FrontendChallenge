@@ -21,14 +21,9 @@ export class TableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    debugger
-    let teste = this.statusTourney
   }
 
   clickResult(games: any, round: any) {
-    debugger
-    // this.closeDropdown();
-    // this.changeResult.emit(round, game);
     const param = {
       games: games,
       round: round,

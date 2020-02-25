@@ -49,7 +49,7 @@ export class ValoranComponent implements OnInit {
     this.showContent = false;
     this.getTourney().then(
       (resp: any) => {
-        this.winner = resp.winner;
+        this.winner = resp.winner !== null ? resp.winner : null;
         this.title = resp.title;
         this.statusTourney = resp.allowed;
         this.tournamentService.events = resp;
@@ -86,7 +86,7 @@ export class ValoranComponent implements OnInit {
         this.showContent = false;
         this.getTourney().then(
           (resp: any) => {
-            this.winner = resp.winner;
+            this.winner = resp.winner !== null ? resp.winner : null;
             this.title = resp.title;
             this.tournamentService.events = resp;
             this.events = this.tournamentService.events;

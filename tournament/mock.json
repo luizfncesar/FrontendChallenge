@@ -2,123 +2,131 @@
   "team-list": [
     {
       "id": 1,
-      "title": "pretorain",
+      "title": "Valoran 2020",
       "totalTeam": 1,
-      "allowed": true,
+      "allowed": false,
       "rounds": [
         {
           "games": [
             {
               "round": 1,
               "game": 1,
-              "scoreA": "2",
-              "scoreB": "1",
-              "teamA": "time-16",
-              "teamB": "time-10",
-              "status": true,
+              "scoreA": "1",
+              "scoreB": "2",
+              "teamA": "Team D",
+              "teamB": "Team J",
+              "status": false,
               "next": [
                 9,
                 "teamA"
               ],
-              "win": "time-16"
+              "win": "Team J",
+              "countTeams": 0
             },
             {
               "round": 1,
               "game": 2,
               "scoreA": "2",
-              "scoreB": "1",
-              "teamA": "time-16",
-              "teamB": "time-11",
-              "status": true,
+              "scoreB": "3",
+              "teamA": "Team P",
+              "teamB": "Team F",
+              "status": false,
               "next": [
                 9,
                 "teamB"
               ],
-              "win": "time-16"
+              "win": "Team F",
+              "countTeams": 0
             },
             {
               "round": 1,
               "game": 3,
-              "scoreA": "1",
-              "scoreB": 0,
-              "teamA": "time-7",
-              "teamB": "time-16",
-              "status": true,
+              "scoreA": 0,
+              "scoreB": "3",
+              "teamA": "Team I",
+              "teamB": "Team N",
+              "status": false,
               "next": [
                 10,
                 "teamA"
               ],
-              "win": "time-7"
+              "win": "Team N",
+              "countTeams": 0
             },
             {
               "round": 1,
               "game": 4,
-              "scoreA": 0,
-              "scoreB": "1",
-              "teamA": "time-11",
-              "teamB": "time-8",
-              "status": true,
+              "scoreA": "1",
+              "scoreB": 0,
+              "teamA": "Team E",
+              "teamB": "Team L",
+              "status": false,
               "next": [
                 10,
                 "teamB"
               ],
-              "win": "time-8"
+              "win": "Team E",
+              "countTeams": 0
             },
             {
               "round": 1,
               "game": 5,
-              "scoreA": "4",
-              "scoreB": 0,
-              "teamA": "time-10",
-              "teamB": "time-11",
-              "status": true,
+              "scoreA": "2",
+              "scoreB": "3",
+              "teamA": "Team Q",
+              "teamB": "Team C",
+              "status": false,
               "next": [
                 11,
                 "teamA"
               ],
-              "win": "time-10"
+              "win": "Team C",
+              "countTeams": 0
             },
             {
               "round": 1,
               "game": 6,
               "scoreA": 0,
-              "scoreB": "13",
-              "teamA": "time-12",
-              "teamB": "time-13",
-              "status": true,
+              "scoreB": "3",
+              "teamA": "Team H",
+              "teamB": "Team G",
+              "status": false,
               "next": [
                 11,
                 "teamB"
               ],
-              "win": "time-13"
+              "win": "Team G",
+              "countTeams": 0
             },
             {
               "round": 1,
               "game": 7,
-              "scoreA": "1",
-              "scoreB": 0,
-              "teamA": "time-15",
-              "teamB": "time-14",
-              "status": true,
+              "scoreA": "3",
+              "scoreB": "2",
+              "teamA": "Team M",
+              "teamB": "Team A",
+              "status": false,
               "next": [
                 12,
                 "teamA"
               ],
-              "win": "time-15"
+              "win": "Team M",
+              "countTeams": 0
             },
             {
               "round": 1,
               "game": 8,
               "scoreA": "1",
-              "scoreB": 0,
-              "teamA": "time-16",
-              "teamB": "time-16",
-              "status": true,
+              "scoreB": "3",
+              "teamA": "Team B",
+              "teamB": "Team U",
+              "status": false,
               "next": [
                 12,
                 "teamB"
               ],
-              "win": "time-16"
+              "win": "Team U",
+              "countTeams": 0
             }
           ]
         },
@@ -128,57 +136,61 @@
               "round": 2,
               "game": 9,
               "scoreA": "2",
-              "scoreB": "0",
-              "teamA": "time-16",
-              "teamB": "time-16",
+              "scoreB": "1",
+              "teamA": "Team J",
+              "teamB": "Team F",
               "status": false,
               "next": [
                 13,
                 "teamA"
               ],
-              "win": "time-16"
+              "win": "Team J",
+              "countTeams": 8
             },
             {
               "round": 2,
               "game": 10,
               "scoreA": "1",
               "scoreB": "3",
-              "teamA": "time-7",
-              "teamB": "time-8",
+              "teamA": "Team N",
+              "teamB": "Team E",
               "status": false,
               "next": [
                 13,
                 "teamB"
               ],
-              "win": "time-8"
+              "win": "Team E",
+              "countTeams": 6
             },
             {
               "round": 2,
               "game": 11,
-              "scoreA": "9",
-              "scoreB": "0",
-              "teamA": "time-10",
-              "teamB": "time-13",
-              "status": false,
+              "scoreA": null,
+              "scoreB": null,
+              "teamA": "Team C",
+              "teamB": "Team G",
+              "status": true,
               "next": [
                 14,
                 "teamA"
               ],
-              "win": "time-10"
+              "win": null,
+              "countTeams": 4
             },
             {
               "round": 2,
               "game": 12,
-              "scoreA": "0",
-              "scoreB": "2",
-              "teamA": "time-15",
-              "teamB": "time-16",
+              "scoreA": "3",
+              "scoreB": "1",
+              "teamA": "Team M",
+              "teamB": "Team U",
               "status": false,
               "next": [
                 14,
                 "teamB"
               ],
-              "win": "time-16"
+              "win": "Team M",
+              "countTeams": 2
             }
           ]
         },
@@ -187,30 +199,32 @@
             {
               "round": 3,
               "game": 13,
-              "scoreA": "23",
-              "scoreB": "0",
-              "teamA": "time-16",
-              "teamB": "time-8",
+              "scoreA": "10",
+              "scoreB": "3",
+              "teamA": "Team J",
+              "teamB": "Team E",
               "status": false,
               "next": [
                 15,
                 "teamA"
               ],
-              "win": "time-16"
+              "win": "Team E",
+              "countTeams": 3
             },
             {
               "round": 3,
               "game": 14,
-              "scoreA": "7",
-              "scoreB": "0",
-              "teamA": "time-10",
-              "teamB": "time-16",
+              "scoreA": "2",
+              "scoreB": "3",
+              "teamA": "vencedor do jogo: 11",
+              "teamB": "Team M",
               "status": false,
               "next": [
                 15,
                 "teamB"
               ],
-              "win": "time-10"
+              "win": "Team M",
+              "countTeams": 1
             }
           ]
         },
@@ -219,16 +233,17 @@
             {
               "round": 4,
               "game": 15,
-              "scoreA": "12",
-              "scoreB": "0",
-              "teamA": "time-16",
-              "teamB": "time-10",
+              "scoreA": "10",
+              "scoreB": "21",
+              "teamA": "Team E",
+              "teamB": "Team M",
               "status": false,
               "next": [
                 15,
                 "teamB"
               ],
-              "win": "time-16"
+              "win": "Team M",
+              "countTeams": 2
             }
           ]
         }
@@ -236,69 +251,386 @@
       "teams": [
         {
           "idTeam": 1,
-          "name": "time-1"
+          "name": "Team A"
         },
         {
           "idTeam": 2,
-          "name": "time-2"
+          "name": "Team B"
         },
         {
           "idTeam": 3,
-          "name": "time-3"
+          "name": "Team C"
         },
         {
           "idTeam": 4,
-          "name": "time-4"
+          "name": "Team D"
         },
         {
           "idTeam": 5,
-          "name": "time-5"
+          "name": "Team E"
         },
         {
           "idTeam": 6,
-          "name": "time-6"
+          "name": "Team F"
         },
         {
           "idTeam": 7,
-          "name": "time-7"
+          "name": "Team G"
         },
         {
           "idTeam": 8,
-          "name": "time-8"
+          "name": "Team H"
         },
         {
           "idTeam": 9,
-          "name": "time-9"
+          "name": "Team I"
         },
         {
           "idTeam": 10,
-          "name": "time-10"
+          "name": "Team J"
         },
         {
           "idTeam": 11,
-          "name": "time-11"
+          "name": "Team L"
         },
         {
           "idTeam": 12,
-          "name": "time-12"
+          "name": "Team M"
         },
         {
           "idTeam": 13,
-          "name": "time-13"
+          "name": "Team N"
         },
         {
           "idTeam": 14,
-          "name": "time-14"
+          "name": "Team P"
         },
         {
           "idTeam": 15,
-          "name": "time-15"
+          "name": "Team Q"
         },
         {
           "idTeam": 16,
-          "name": "time-16"
+          "name": "Team U"
         }
-      ]
+      ],
+      "winner": "Team M"
+    },
+    {
+      "id": 2,
+      "title": "Valoran 2019",
+      "totalTeam": 1,
+      "allowed": false,
+      "rounds": [
+        {
+          "games": [
+            {
+              "round": 1,
+              "game": 1,
+              "scoreA": "2",
+              "scoreB": 0,
+              "teamA": "Team 5",
+              "teamB": "Team 7",
+              "status": false,
+              "next": [
+                9,
+                "teamA"
+              ],
+              "win": "Team 5",
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 2,
+              "scoreA": 0,
+              "scoreB": "3",
+              "teamA": "Team 16",
+              "teamB": "Team 3",
+              "status": false,
+              "next": [
+                9,
+                "teamB"
+              ],
+              "win": "Team 3",
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 3,
+              "scoreA": "2",
+              "scoreB": 0,
+              "teamA": "Team 11",
+              "teamB": "Team 2",
+              "status": false,
+              "next": [
+                10,
+                "teamA"
+              ],
+              "win": "Team 11",
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 4,
+              "scoreA": 0,
+              "scoreB": "20",
+              "teamA": "Team 10",
+              "teamB": "Team 8",
+              "status": false,
+              "next": [
+                10,
+                "teamB"
+              ],
+              "win": "Team 8",
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 5,
+              "scoreA": 0,
+              "scoreB": "20",
+              "teamA": "Team 14",
+              "teamB": "Team 1",
+              "status": false,
+              "next": [
+                11,
+                "teamA"
+              ],
+              "win": "Team 1",
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 6,
+              "scoreA": 0,
+              "scoreB": "2",
+              "teamA": "Team 9",
+              "teamB": "Team 12",
+              "status": false,
+              "next": [
+                11,
+                "teamB"
+              ],
+              "win": "Team 12",
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 7,
+              "scoreA": 0,
+              "scoreB": "20",
+              "teamA": "Team 13",
+              "teamB": "Team 4",
+              "status": false,
+              "next": [
+                12,
+                "teamA"
+              ],
+              "win": "Team 4",
+              "countTeams": 0
+            },
+            {
+              "round": 1,
+              "game": 8,
+              "scoreA": "32",
+              "scoreB": "2",
+              "teamA": "Team 6",
+              "teamB": "Team 15",
+              "status": false,
+              "next": [
+                12,
+                "teamB"
+              ],
+              "win": "Team 6",
+              "countTeams": 0
+            }
+          ]
+        },
+        {
+          "games": [
+            {
+              "round": 2,
+              "game": 9,
+              "scoreA": "3",
+              "scoreB": "1",
+              "teamA": "Team 5",
+              "teamB": "Team 3",
+              "status": false,
+              "next": [
+                13,
+                "teamA"
+              ],
+              "win": "Team 5",
+              "countTeams": 1
+            },
+            {
+              "round": 2,
+              "game": 10,
+              "scoreA": "1",
+              "scoreB": "3",
+              "teamA": "Team 11",
+              "teamB": "Team 8",
+              "status": false,
+              "next": [
+                13,
+                "teamB"
+              ],
+              "win": "Team 8",
+              "countTeams": 1
+            },
+            {
+              "round": 2,
+              "game": 11,
+              "scoreA": "1",
+              "scoreB": "2",
+              "teamA": "Team 1",
+              "teamB": "Team 12",
+              "status": false,
+              "next": [
+                14,
+                "teamA"
+              ],
+              "win": "Team 12",
+              "countTeams": 1
+            },
+            {
+              "round": 2,
+              "game": 12,
+              "scoreA": "2",
+              "scoreB": "1",
+              "teamA": "Team 4",
+              "teamB": "Team 6",
+              "status": false,
+              "next": [
+                14,
+                "teamB"
+              ],
+              "win": "Team 4",
+              "countTeams": 1
+            }
+          ]
+        },
+        {
+          "games": [
+            {
+              "round": 3,
+              "game": 13,
+              "scoreA": "1",
+              "scoreB": "2",
+              "teamA": "Team 5",
+              "teamB": "Team 8",
+              "status": false,
+              "next": [
+                15,
+                "teamA"
+              ],
+              "win": "Team 8",
+              "countTeams": 1
+            },
+            {
+              "round": 3,
+              "game": 14,
+              "scoreA": "2",
+              "scoreB": "3",
+              "teamA": "Team 12",
+              "teamB": "Team 4",
+              "status": false,
+              "next": [
+                15,
+                "teamB"
+              ],
+              "win": "Team 4",
+              "countTeams": 1
+            }
+          ]
+        },
+        {
+          "games": [
+            {
+              "round": 4,
+              "game": 15,
+              "scoreA": "2",
+              "scoreB": "1",
+              "teamA": "Team 8",
+              "teamB": "Team 4",
+              "status": false,
+              "next": [
+                15,
+                "teamB"
+              ],
+              "win": "Team 8",
+              "countTeams": 1
+            }
+          ]
+        }
+      ],
+      "teams": [
+        {
+          "idTeam": 1,
+          "name": "Team 1"
+        },
+        {
+          "idTeam": 2,
+          "name": "Team 2"
+        },
+        {
+          "idTeam": 3,
+          "name": "Team 3"
+        },
+        {
+          "idTeam": 4,
+          "name": "Team 4"
+        },
+        {
+          "idTeam": 5,
+          "name": "Team 5"
+        },
+        {
+          "idTeam": 6,
+          "name": "Team 6"
+        },
+        {
+          "idTeam": 7,
+          "name": "Team 7"
+        },
+        {
+          "idTeam": 8,
+          "name": "Team 8"
+        },
+        {
+          "idTeam": 9,
+          "name": "Team 9"
+        },
+        {
+          "idTeam": 10,
+          "name": "Team 10"
+        },
+        {
+          "idTeam": 11,
+          "name": "Team 11"
+        },
+        {
+          "idTeam": 12,
+          "name": "Team 12"
+        },
+        {
+          "idTeam": 13,
+          "name": "Team 13"
+        },
+        {
+          "idTeam": 14,
+          "name": "Team 14"
+        },
+        {
+          "idTeam": 15,
+          "name": "Team 15"
+        },
+        {
+          "idTeam": 16,
+          "name": "Team 16"
+        }
+      ],
+      "winner": "Team 8"
     }
   ]
 }

@@ -13,7 +13,7 @@
         <ul class="bracket bracket-{{l+1}}" *ngFor="let e of event.rounds; let l=index;">
             <ng-container *ngFor="let k of e.games; let j=index;">
                 <li class="team-item">
-                    <button class="button--table" [ngClass]="{'button--disabled': !statusTourney}" (click)="clickResult(e, k)" [disabled]="!statusTourney" >
+                    <button class="button--table" [ngClass]="{'button--disabled': !statusTourney || !k.status}" (click)="clickResult(e, k)" [disabled]="!statusTourney || !k.status" >
                         <span [ngClass]="{'winner': k.win === k.teamA}">{{k.teamA}}</span> <time>{{k.scoreA}}</time> -
                         <time>{{k.scoreB}}</time> <span [ngClass]="{'winner': k.win === k.teamB}">{{k.teamB}}</span>
                     </button>
