@@ -100,6 +100,7 @@ h1 {
     transition: 0.3s;
 }
 
+.uk-modal .uk-button-primary:focus, .uk-modal .uk-button-primary:hover, 
 .uk-button-primary:focus, .uk-button-primary:hover,
 .uk-button-default:focus, .uk-button-default:hover {
     background-color: #757575;
@@ -108,11 +109,13 @@ h1 {
     transition: 0.3s;
 }
 
+.uk-modal .uk-button-primary,
 .uk-button-primary {
     background-color: #292929;
     color: #fff;
     border: 1px solid transparent;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .uk-card-default {

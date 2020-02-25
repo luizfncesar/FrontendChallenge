@@ -17,10 +17,22 @@ export class TournamentService {
 
   public events: any;
 
-  private _randomTeam(arrayRandomTeam) {
-    const randomTeam = arrayRandomTeam[Math.floor(Math.random() * arrayRandomTeam.length)];
-    arrayRandomTeam.splice(randomTeam, 1);
-    return randomTeam.name;
+  private _randomTeam(array) {
+    let currentIndex: number = array.length;
+    let temporaryValue: any;
+    let randomIndex: any;
+
+    while (0 < currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    let teste = array;
+    return array;
   }
 
   updateTorney(id: string, body: Object) {
@@ -54,6 +66,8 @@ export class TournamentService {
     let nextGame = totalTeam/2;
     let countNextGames = 1;
     let countAllGames = 1;
+    let countRandomTeam = 0;
+    debugger
     let teamsList = info.teams;
 
     const teams: TeamModel[] = Array.from({
@@ -73,6 +87,7 @@ export class TournamentService {
     );
     
     let arrayTeam: any = [].concat(teams);
+    this._randomTeam(arrayTeam);
 
     const games: GamesModel[] = Array.from({
       length: 4
@@ -93,14 +108,14 @@ export class TournamentService {
             nextGame = nextGame + 1;
             event.next = [nextGame, 'teamA'];
             
-            event.teamA = round < 1 ? this._randomTeam(teams) : `vencedor do jogo: ${countNextGames++}`;
-            event.teamB = round < 1 ? this._randomTeam(teams) : `vencedor do jogo: ${countNextGames++}`;
+            event.teamA = round < 1 ? arrayTeam[countRandomTeam++].name : `vencedor do jogo: ${countNextGames++}`;
+            event.teamB = round < 1 ? arrayTeam[countRandomTeam++].name : `vencedor do jogo: ${countNextGames++}`;
             
           } else {
             event.next = [nextGame, 'teamB']
             
-            event.teamA = round < 1 ? this._randomTeam(teams) : `vencedor do jogo: ${countNextGames++}`;
-            event.teamB = round < 1 ? this._randomTeam(teams) : `vencedor do jogo: ${countNextGames++}`;
+            event.teamA = round < 1 ? arrayTeam[countRandomTeam++].name : `vencedor do jogo: ${countNextGames++}`;
+            event.teamB = round < 1 ? arrayTeam[countRandomTeam++].name : `vencedor do jogo: ${countNextGames++}`;
 
           }
 
@@ -129,7 +144,7 @@ export class TournamentService {
       totalTeam,
       allowed: true,
       rounds: games,
-      teams: arrayTeam
+      teams: teams
     }
     return body;
   }

@@ -160,7 +160,7 @@ export class TournamentListComponent implements OnInit {
       this.teams.push(this.createFormGroup())
       this.showButtonForm = true;
     } else {
-      console.log('limite total')
+      this.notify('Limite de 16 equipes atingido!', 'danger');
     }
   }
 

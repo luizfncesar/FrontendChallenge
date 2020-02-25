@@ -13,12 +13,12 @@
         <form autocomplete="off" [formGroup]="form" (ngSubmit)="onSubmit()">
             <fieldset class="uk-fieldset">
 
-                <legend class="uk-legend">{{type === 'register'? 'Cadastrar' : 'Editar'}} Produto</legend>
+                <legend class="uk-legend">{{type === 'register'? 'Cadastrar' : 'Editar'}} Torneio e Equipes</legend>
 
                 <div class="uk-margin">
                     <label class="uk-form-label" for="form-stacked-text">Nome do Torneio</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="medeletro..." formControlName="title">
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="Torneio Valoran 2020..." formControlName="title">
                     </div>
                 </div>
 
@@ -36,7 +36,7 @@
                     <div [formGroup]="item">
                         <label class="uk-form-label" for="form-stacked-text">Time: {{i+1}}/16</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="form-stacked-text" type="text" placeholder="medeletro..." formControlName="team">
+                            <input class="uk-input" id="form-stacked-text" type="text" placeholder="Team A..." formControlName="team">
                         </div>
                     </div>
                 </div>
