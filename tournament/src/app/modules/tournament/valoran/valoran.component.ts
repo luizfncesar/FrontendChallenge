@@ -17,6 +17,8 @@ export class ValoranComponent implements OnInit {
   form: FormGroup;
   tournament_id: any;
   title: string = '';
+  winner: any = '';
+  statusTourney: boolean;
   events: Array<EventModel[]>;
   showContent: boolean = false;
   count: number = 0;
@@ -47,7 +49,9 @@ export class ValoranComponent implements OnInit {
     this.showContent = false;
     this.getTourney().then(
       (resp: any) => {
+        this.winner = resp.winner;
         this.title = resp.title;
+        this.statusTourney = resp.allowed;
         this.tournamentService.events = resp;
         this.events = this.tournamentService.events;
         this.showContent = true;
@@ -82,6 +86,8 @@ export class ValoranComponent implements OnInit {
         this.showContent = false;
         this.getTourney().then(
           (resp: any) => {
+            this.winner = resp.winner;
+            this.title = resp.title;
             this.tournamentService.events = resp;
             this.events = this.tournamentService.events;
             this.showContent = true;

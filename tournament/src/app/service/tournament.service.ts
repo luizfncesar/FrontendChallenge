@@ -175,7 +175,7 @@ export class TournamentService {
       }
     }
     
-    if(param.win) {
+    if(param.win && round.round < 4) {
       let nextGame: any = body.rounds[round.round];
       for (let index = 0; index < nextGame.games.length; index++) {
         if (param.nextGame === 'teamA' && nextGame.games[index].game === param.nextTeam) {
@@ -186,6 +186,9 @@ export class TournamentService {
           break
         }
       }
+    } else {
+      body.winner = param.win;
+      body.allowed = false;
     }
 
     return body;
