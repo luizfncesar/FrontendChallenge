@@ -1,37 +1,34 @@
 <div class="content-padder content-background">
-    <app-breadcrumb [titleBreadcrumb]="title" [iconBreadcrumb]="'ion-cube'"></app-breadcrumb>
-    <div class="uk-section-small" *ngIf="showContent">
+<app-breadcrumb [titleBreadcrumb]="title" [iconBreadcrumb]="'ion-cube'"></app-breadcrumb>
+    <div class="uk-section-small uk-section-color" *ngIf="showContent">
         <div class="uk-container uk-container-large">
             <app-table [event]="events" (changeStatus)="changeStatus($event)" (deleteProduct)="deleteProduct($event)" (openModal)="openModal($event)"></app-table>
         </div>
     </div>
-    <div class="uk-height-medium">
-        <div class="uk-text-center uk-align-center uk-margin-large-top" uk-spinner="ratio: 2" *ngIf="!showContent"></div>
+    <div class="uk-height-medium" *ngIf="!showContent">
+        <div class="uk-text-center uk-align-center uk-margin-large-top" uk-spinner="ratio: 2" *ngIf="!showContent" ></div>
     </div>
 </div>
 
-<!-- This is the modal -->
-<div id="modal-example" uk-modal *ngIf="showContent">
+
+<div id="register-tournament" uk-modal *ngIf="showContent">
     <div class="uk-modal-dialog uk-modal-body">
         <form autocomplete="off" [formGroup]="form" (ngSubmit)="onSubmit()">
             <fieldset class="uk-fieldset">
 
-                <legend class="uk-legend">{{type === 'register'? 'Cadastrar' : 'Editar'}} Produto</legend>
+                <legend class="uk-legend">{{type === 'register'? 'Cadastrar' : 'Editar'}} Resultado</legend>
 
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="form-stacked-text">Nome do Produto</label>
+                    <label class="uk-form-label" for="form-stacked-text">{{round.teamA}}</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="medeletro..." formControlName="name">
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="medeletro..." formControlName="scoreA">
                     </div>
                 </div>
 
                 <div class="uk-margin">
-                    <label class="uk-form-label uk-margin-bottom" for="form-stacked-select">Status do Produto</label>
+                    <label class="uk-form-label" for="form-stacked-text">{{round.teamB}}</label>
                     <div class="uk-form-controls">
-                        <select class="uk-select" id="form-stacked-select" formControlName="status">
-              <option [value]="true">Ativo</option>
-              <option [value]="false">Inativo</option>
-            </select>
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="medeletro..." formControlName="scoreB">
                     </div>
                 </div>
             </fieldset>

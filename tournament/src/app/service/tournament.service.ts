@@ -24,6 +24,10 @@ export class TournamentService {
   }
 
   updateTorney(id: string, body: Object) {
+    return this.http.patch(`${environment.API}/team-list/${id}`, body);
+  }
+
+  putResult(id: string, body: Object) {
     return this.http.put(`${environment.API}/team-list/${id}`, body);
   }
 
@@ -48,7 +52,8 @@ export class TournamentService {
     let title = info.title;
     let totalTeam = info.grid;
     let nextGame = totalTeam/2;
-    let countGames = 1;
+    let countNextGames = 1;
+    let countAllGames = 1;
     let teamsList = info.teams;
 
     const teams: TeamModel[] = Array.from({
@@ -80,29 +85,28 @@ export class TournamentService {
 
         for (let index = 0; index < totalTeam; index++) {
           const event = new RoundModel();
-          event.game = index + 1;
+          event.round = round + 1;
+          event.game = countAllGames++;
 
           
           if (totalGame % 2 == 0){
             nextGame = nextGame + 1;
-            event.next = [nextGame, ''];
-
-            event.scoreA = round < 1 ? 0 : null;
-            event.scoreB = round < 1 ? 0 : null;
+            event.next = [nextGame, 'teamA'];
             
-            event.teamA = round < 1 ? this._randomTeam(teams) : `vencedor do jogo: ${countGames++}`;
-            event.teamB = round < 1 ? this._randomTeam(teams) : `vencedor do jogo: ${countGames++}`;
+            event.teamA = round < 1 ? this._randomTeam(teams) : `vencedor do jogo: ${countNextGames++}`;
+            event.teamB = round < 1 ? this._randomTeam(teams) : `vencedor do jogo: ${countNextGames++}`;
             
           } else {
-            event.next = [nextGame, '']
-
-            event.scoreA = round < 1 ? 0 : null;
-            event.scoreB = round < 1 ? 0 : null;
+            event.next = [nextGame, 'teamB']
             
-            event.teamA = round < 1 ? this._randomTeam(teams) : `vencedor do jogo: ${countGames++}`;
-            event.teamB = round < 1 ? this._randomTeam(teams) : `vencedor do jogo: ${countGames++}`;
+            event.teamA = round < 1 ? this._randomTeam(teams) : `vencedor do jogo: ${countNextGames++}`;
+            event.teamB = round < 1 ? this._randomTeam(teams) : `vencedor do jogo: ${countNextGames++}`;
 
           }
+
+          event.status = round < 1 ? true : false;
+          event.scoreA = round < 1 ? 0 : null;
+          event.scoreB = round < 1 ? 0 : null;
 
           totalGame--;
           rounds.push(event);
@@ -128,6 +132,49 @@ export class TournamentService {
       teams: arrayTeam
     }
     return body;
+  }
+
+  updateRound(body: any, round: any, results: any) {
+    debugger
+
+    let bodySearch = body.rounds[round.round - 1];
+    let gameWin: any;
+
+    let param = {
+      win:  '',
+      nextGame: '',
+      nextTeam: ''
+    }
+
+    for (let index = 0; index < bodySearch.games.length; index++) {
+      if(bodySearch.games[index].game === round.game) {
+        bodySearch.games[index].status = false;
+        bodySearch.games[index].scoreA = results.scoreA;
+        bodySearch.games[index].scoreB = results.scoreB;
+        bodySearch.games[index].win = results.scoreA > results.scoreB ? bodySearch.games[index].teamA : results.scoreB > results.scoreA ? bodySearch.games[index].teamB : "" ;
+
+        param.win = bodySearch.games[index].win;
+        param.nextGame = bodySearch.games[index].next[1];
+        param.nextTeam = bodySearch.games[index].next[0];
+        break;
+      }
+    }
+    
+    if(param.win) {
+      let nextGame: any = body.rounds[round.round];
+      for (let index = 0; index < nextGame.games.length; index++) {
+        if (param.nextGame === 'teamA' && nextGame.games[index].game === param.nextTeam) {
+          nextGame.games[index].teamA = param.win;
+          break
+        } else  if ( param.nextGame === 'teamB' && nextGame.games[index].game === param.nextTeam){
+          nextGame.games[index].teamB = param.win;
+          break
+        }
+      }
+    }
+
+    return body;
+    
   }
   
 }

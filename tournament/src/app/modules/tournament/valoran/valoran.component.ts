@@ -22,13 +22,15 @@ export class ValoranComponent implements OnInit {
   count: number = 0;
   type: string;
   showButtonForm: Boolean = false;
+  round: any = {
+    teamA: "",
+    teamB: ""
+  };
 
   infoTournament: Object = {
-    id: null,
-    title: '',
-    allowed: true,
-    grid: 16,
-    // teams: null
+    scoreA: 0,
+    scoreB: 0,
+    status: true
   };
 
   constructor(
@@ -42,14 +44,13 @@ export class ValoranComponent implements OnInit {
   ngOnInit() {
 
     this.tournament_id = this.route.snapshot.params.id;
-    
+    this.showContent = false;
     this.getTourney().then(
       (resp: any) => {
-        debugger;
         this.tournamentService.events = resp;
         this.events = this.tournamentService.events;
         this.showContent = true;
-        // this.createForm(this.infoTournament);
+        this.createForm(this.infoTournament);
       }
     )
       .catch(
@@ -73,81 +74,59 @@ export class ValoranComponent implements OnInit {
     });
   }
 
-  private registerTournament(info) {
-    info.id = this.count + 1
-    let body: any = this.tournamentService.createTourney(info);
-    this.tournamentService.postTourney(body).subscribe(
+  registerResult(body: string) {
+    let tournament: any = body;
+    this.tournamentService.updateTorney(this.tournament_id, tournament).subscribe(
       () => {
         this.showContent = false;
         this.getTourney().then(
           (resp: any) => {
             this.tournamentService.events = resp;
-            this.count = resp.length;
             this.events = this.tournamentService.events;
             this.showContent = true;
             this.createForm(this.infoTournament);
-            console.log('Torneio cadastrado com sucesso!', 'success');
+            this.notify('Resultado alterado com sucesso!', 'success');
           }
         )
           .catch(
             (error) => {
-              console.log('Ocorreu um erro inesperado!', 'danger');
+              this.notify('Ocorreu um erro inesperado!', 'danger');
             }
           );
-        
       },
       error => {
-        console.log('Ocorreu um erro inesperado!', 'danger');
+        this.notify('Ocorreu um erro inesperado!', 'danger');
       }
     );
+      
   }
 
   onSubmit() {
-    debugger
-    const body = this.form.value;
-    if (this.type === 'register') {
-      this.registerTournament(body);
-    } else {
-      this.tournamentService.updateTorney('1', body).subscribe(
-        (resp: any) => {
-          this.showContent = false;
-          this.getTourney().then(
-            (resp: any) => {
-              this.tournamentService.events = resp;
-              this.count = resp.length;
-              this.events = this.tournamentService.events;
-              this.showContent = true;
-              this.createForm(this.infoTournament);
-              this.notify('Produto excluido com sucesso!', 'success');
-            }
-          )
-            .catch(
-              (error) => {
-                this.notify('Ocorreu um erro inesperado!', 'danger');
-              }
-            );
-        },
-        error => {
-          this.notify('Ocorreu um erro inesperado!', 'danger');
-        }
-      );
-    }
+    const result = this.form.value;
+    let body: any = this.tournamentService.updateRound(this.events, this.round, result);
+    this.registerResult(body);
   }
 
 
   createForm(info: any) {
     this.form = this.formBuilder.group({
-      title: [info.title, Validators.required],
-      allowed: [info.allowed, Validators.required],
-      grid: [16, Validators.required],
-      // teams: this.formBuilder.array([this.createFormGroup(info)], Validators.required)
+      scoreA: [info.scoreA, Validators.required],
+      scoreB: [info.scoreB, Validators.required]
     });
   }
 
   openModal(param: any) {
-    debugger
     this.type = param.type;
-    if (this.type === 'register') {
+    if (this.type === 'edit') {
+
+      this.round = param.round;
+
+      this.infoTournament = {
+        scoreA: this.round.scoreA,
+        scoreB: this.round.scoreB,
+        status: true
+      }
+
       this.createForm(this.infoTournament);
       this.showButtonForm = false;
     } else {
