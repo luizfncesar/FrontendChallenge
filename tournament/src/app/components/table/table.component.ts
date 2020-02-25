@@ -12,12 +12,17 @@ export class TableComponent implements OnInit {
   // @Input() nameList: string;
   @Input() event: any[] = [];
 
+  @Input() winner: any;
+  @Input() statusTourney: Boolean;
+
   @Output() changeResult: EventEmitter<any> = new EventEmitter();
   @Output() openModal: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+    debugger
+    let teste = this.statusTourney
   }
 
   clickResult(games: any, round: any) {

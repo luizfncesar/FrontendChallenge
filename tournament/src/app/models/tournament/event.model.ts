@@ -8,4 +8,5 @@ export class EventModel {
   totalTeam: number = 16;
   teams?: TeamModel[];
   rounds?: GamesModel[];
+  winner?: string = null;
 }
